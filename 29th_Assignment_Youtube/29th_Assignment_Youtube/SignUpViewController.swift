@@ -28,24 +28,21 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
         }
         textField.resignFirstResponder()
         return true
-        
     }
-
     
     override func viewDidLoad() {
         super.viewDidLoad()
         nextButton.isEnabled = false
-
-        // Do any additional setup after loading the view.
     }
 
     @IBAction func textFieldEditingChanged(_ sender: UITextField) {
-        if nameTextField.text?.isEmpty == false && idTextField.text?.isEmpty == false && passwordTextField.text?.isEmpty == false{
-        nextButton.isEnabled = true
+        if nameTextField.text?.isEmpty == false && idTextField.text?.isEmpty == false && passwordTextField.text?.isEmpty == false {
+            nextButton.isEnabled = true
         }
     }
+    
     @IBAction func touchUpToChangeImage(_ sender: UIButton) {
-        if checkButton.isSelected == true {
+        if checkButton.isSelected {
             checkButton.setImage(UIImage.init(systemName: "checkmark.square.fill"), for: .normal)
             passwordTextField.isSecureTextEntry = false
             checkButton.isSelected = false
@@ -53,8 +50,7 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
             checkButton.setImage(UIImage.init(systemName: "checkmark.square"), for: .normal)
             passwordTextField.isSecureTextEntry = true
             checkButton.isSelected = true
-        }
-       
+        }       
     }
  
     @IBAction func touchUpToGoNext(_ sender: Any) {
@@ -64,17 +60,4 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
         nextVC.modalPresentationStyle = .fullScreen
         self.present(nextVC, animated: true, completion: nil)
     }
-    
-    
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

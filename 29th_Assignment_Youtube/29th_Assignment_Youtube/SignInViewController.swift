@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ViewController: UIViewController, UITextFieldDelegate {
+class SignInViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var idTextField: UITextField!
@@ -24,7 +24,6 @@ class ViewController: UIViewController, UITextFieldDelegate {
         }
         textField.resignFirstResponder()
         return true
-        
     }
     
     override func viewDidLoad() {
