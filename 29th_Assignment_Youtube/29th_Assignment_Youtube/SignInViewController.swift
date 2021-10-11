@@ -28,7 +28,6 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
     }
     @IBAction func touchUpToSendName(_ sender: Any) {
         guard let nextVC = self.storyboard?.instantiateViewController(withIdentifier: "ResultViewController") as? ResultViewController else {return}
@@ -37,7 +36,5 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
         nextVC.modalPresentationStyle = .fullScreen
         self.present(nextVC, animated: true, completion: nil)
     }
-    
-
 }
 
