@@ -19,7 +19,7 @@ class ResultViewController: UIViewController {
     
     func setNameInLabel(){
         if let data = name {
-            nameLabel.text = data + "님"
+            nameLabel.text = data + "님 환영합니다!"
             nameLabel.sizeToFit() 
         }
     }
