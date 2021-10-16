@@ -11,6 +11,9 @@
 		77AF1B392719E79D007401DA /* SF-Pro-Display-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 77AF1B382719E79D007401DA /* SF-Pro-Display-Regular.otf */; };
 		77AF1B3B2719E7DB007401DA /* SF-Pro-Display-Semibold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 77AF1B3A2719E7DB007401DA /* SF-Pro-Display-Semibold.otf */; };
 		77AF1B3D2719EDD4007401DA /* SF-Pro-Display-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 77AF1B3C2719EDD4007401DA /* SF-Pro-Display-Medium.otf */; };
+		77AF1B3F271B5115007401DA /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77AF1B3E271B5115007401DA /* NavigationController.swift */; };
+		77AF1B41271B57AD007401DA /* TabBar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 77AF1B40271B57AD007401DA /* TabBar.storyboard */; };
+		77AF1B43271B5B25007401DA /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77AF1B42271B5B25007401DA /* TabBarController.swift */; };
 		77ECCD4D270DFE1F0090DDF8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77ECCD4C270DFE1F0090DDF8 /* AppDelegate.swift */; };
 		77ECCD4F270DFE1F0090DDF8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77ECCD4E270DFE1F0090DDF8 /* SceneDelegate.swift */; };
 		77ECCD51270DFE1F0090DDF8 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77ECCD50270DFE1F0090DDF8 /* SignInViewController.swift */; };
@@ -25,6 +28,9 @@
 		77AF1B382719E79D007401DA /* SF-Pro-Display-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "SF-Pro-Display-Regular.otf"; path = "../../../../../../../../../Library/Fonts/SF-Pro-Display-Regular.otf"; sourceTree = "<group>"; };
 		77AF1B3A2719E7DB007401DA /* SF-Pro-Display-Semibold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "SF-Pro-Display-Semibold.otf"; path = "../../../../../../../../../Library/Fonts/SF-Pro-Display-Semibold.otf"; sourceTree = "<group>"; };
 		77AF1B3C2719EDD4007401DA /* SF-Pro-Display-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "SF-Pro-Display-Medium.otf"; path = "../../../../../../../../../Library/Fonts/SF-Pro-Display-Medium.otf"; sourceTree = "<group>"; };
+		77AF1B3E271B5115007401DA /* NavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
+		77AF1B40271B57AD007401DA /* TabBar.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TabBar.storyboard; sourceTree = "<group>"; };
+		77AF1B42271B5B25007401DA /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		77ECCD49270DFE1F0090DDF8 /* 29th_Assignment_Youtube.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = 29th_Assignment_Youtube.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		77ECCD4C270DFE1F0090DDF8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		77ECCD4E270DFE1F0090DDF8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -71,7 +77,10 @@
 				77ECCD50270DFE1F0090DDF8 /* SignInViewController.swift */,
 				77ECCD60270E141B0090DDF8 /* SignUpViewController.swift */,
 				77ECCD62270E14510090DDF8 /* ResultViewController.swift */,
+				77AF1B3E271B5115007401DA /* NavigationController.swift */,
+				77AF1B42271B5B25007401DA /* TabBarController.swift */,
 				77ECCD52270DFE1F0090DDF8 /* Main.storyboard */,
+				77AF1B40271B57AD007401DA /* TabBar.storyboard */,
 				77AF1B362719E018007401DA /* Assets.xcassets */,
 				77AF1B3A2719E7DB007401DA /* SF-Pro-Display-Semibold.otf */,
 				77AF1B382719E79D007401DA /* SF-Pro-Display-Regular.otf */,
@@ -145,6 +154,7 @@
 				77AF1B372719E018007401DA /* Assets.xcassets in Resources */,
 				77AF1B3B2719E7DB007401DA /* SF-Pro-Display-Semibold.otf in Resources */,
 				77AF1B392719E79D007401DA /* SF-Pro-Display-Regular.otf in Resources */,
+				77AF1B41271B57AD007401DA /* TabBar.storyboard in Resources */,
 				77ECCD54270DFE1F0090DDF8 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -156,9 +166,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				77AF1B3F271B5115007401DA /* NavigationController.swift in Sources */,
 				77ECCD63270E14510090DDF8 /* ResultViewController.swift in Sources */,
 				77ECCD51270DFE1F0090DDF8 /* SignInViewController.swift in Sources */,
 				77ECCD4D270DFE1F0090DDF8 /* AppDelegate.swift in Sources */,
+				77AF1B43271B5B25007401DA /* TabBarController.swift in Sources */,
 				77ECCD61270E141B0090DDF8 /* SignUpViewController.swift in Sources */,
 				77ECCD4F270DFE1F0090DDF8 /* SceneDelegate.swift in Sources */,
 			);

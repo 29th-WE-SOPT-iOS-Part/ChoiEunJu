@@ -36,5 +36,10 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
         nextVC.modalPresentationStyle = .fullScreen
         self.present(nextVC, animated: true, completion: nil)
     }
+    @IBAction func touchUpToGoSignUpVC(_ sender: Any) {
+        guard let nextVC = self.storyboard?.instantiateViewController(withIdentifier: "SignUpViewController") else {return}
+        
+        self.navigationController?.pushViewController(nextVC, animated: true)
+    }
 }
 
