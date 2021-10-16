@@ -224,7 +224,7 @@
                                 <rect key="frame" x="130" y="104" width="118" height="40"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="비밀번호 표시" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4xv-QI-8TM">
-                                <rect key="frame" x="48" y="513.33333333333337" width="75" height="21"/>
+                                <rect key="frame" x="50" y="513.33333333333337" width="73" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="ESJ-qf-5Lh"/>
                                 </constraints>
@@ -238,20 +238,20 @@
                         <constraints>
                             <constraint firstItem="0Vz-CZ-fD1" firstAttribute="leading" secondItem="pdj-vh-u2N" secondAttribute="leading" constant="21" id="0Tz-XN-yEL"/>
                             <constraint firstItem="pdj-vh-u2N" firstAttribute="trailing" secondItem="aB9-2M-hZt" secondAttribute="trailing" constant="147" id="0i6-F3-t8K"/>
-                            <constraint firstItem="UuF-ci-0To" firstAttribute="top" secondItem="eXf-60-1iZ" secondAttribute="bottom" constant="64" id="353-N0-7xg"/>
                             <constraint firstItem="Kfk-AF-VgM" firstAttribute="top" secondItem="aB9-2M-hZt" secondAttribute="bottom" constant="128" id="3Pl-Y7-8HZ"/>
                             <constraint firstItem="aB9-2M-hZt" firstAttribute="top" secondItem="cKk-Wy-9fu" secondAttribute="bottom" constant="23" id="6GY-m4-aOm"/>
                             <constraint firstItem="cKk-Wy-9fu" firstAttribute="top" secondItem="pdj-vh-u2N" secondAttribute="top" constant="60" id="8Ay-CL-FbN"/>
                             <constraint firstItem="aB9-2M-hZt" firstAttribute="leading" secondItem="pdj-vh-u2N" secondAttribute="leading" constant="147" id="9Il-ja-orw"/>
                             <constraint firstItem="0Vz-CZ-fD1" firstAttribute="top" secondItem="eXf-60-1iZ" secondAttribute="bottom" constant="17" id="9Ka-wb-Q7I"/>
                             <constraint firstItem="pdj-vh-u2N" firstAttribute="trailing" secondItem="12A-Ui-HQ7" secondAttribute="trailing" constant="22" id="Avl-yh-oID"/>
-                            <constraint firstItem="4xv-QI-8TM" firstAttribute="leading" secondItem="pdj-vh-u2N" secondAttribute="leading" constant="48" id="CdZ-5U-08o"/>
                             <constraint firstItem="pdj-vh-u2N" firstAttribute="trailing" secondItem="UuF-ci-0To" secondAttribute="trailing" constant="22" id="D7m-OS-YWe"/>
+                            <constraint firstItem="UuF-ci-0To" firstAttribute="top" secondItem="4xv-QI-8TM" secondAttribute="bottom" constant="29" id="IqH-R2-qrf"/>
                             <constraint firstItem="UuF-ci-0To" firstAttribute="leading" secondItem="pdj-vh-u2N" secondAttribute="leading" constant="22" id="RVN-02-rEf"/>
                             <constraint firstItem="eXf-60-1iZ" firstAttribute="leading" secondItem="pdj-vh-u2N" secondAttribute="leading" constant="22" id="S5k-7h-dzW"/>
                             <constraint firstItem="cKk-Wy-9fu" firstAttribute="leading" secondItem="pdj-vh-u2N" secondAttribute="leading" constant="130" id="SFI-AM-RKH"/>
                             <constraint firstItem="pdj-vh-u2N" firstAttribute="trailing" secondItem="eXf-60-1iZ" secondAttribute="trailing" constant="22" id="Td7-sN-Aa5"/>
                             <constraint firstItem="12A-Ui-HQ7" firstAttribute="top" secondItem="Kfk-AF-VgM" secondAttribute="bottom" constant="17" id="V1d-2g-aQA"/>
+                            <constraint firstItem="4xv-QI-8TM" firstAttribute="leading" secondItem="0Vz-CZ-fD1" secondAttribute="trailing" constant="11" id="Vqw-0g-cem"/>
                             <constraint firstItem="pdj-vh-u2N" firstAttribute="trailing" secondItem="cKk-Wy-9fu" secondAttribute="trailing" constant="127" id="YVE-O9-C3v"/>
                             <constraint firstItem="4xv-QI-8TM" firstAttribute="top" secondItem="eXf-60-1iZ" secondAttribute="bottom" constant="14" id="b5o-l9-i11"/>
                             <constraint firstItem="12A-Ui-HQ7" firstAttribute="leading" secondItem="pdj-vh-u2N" secondAttribute="leading" constant="22" id="emD-GZ-F6b"/>
@@ -309,6 +309,9 @@
                                 <state key="normal" title="다른 계정으로 로그인하기">
                                     <color key="titleColor" red="0.25882352941176467" green="0.52156862745098043" blue="0.95686274509803915" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="touchUpToGoBack:" destination="Hq6-71-dMN" eventType="touchUpInside" id="Jwd-X5-HTP"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="FvF-gt-x0U"/>

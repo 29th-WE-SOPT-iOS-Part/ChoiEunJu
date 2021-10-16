@@ -23,4 +23,12 @@ class ResultViewController: UIViewController {
             nameLabel.sizeToFit() 
         }
     }
+    
+    @IBAction func touchUpToGoBack(_ sender: Any) {
+        guard let nextVC = self.storyboard?.instantiateViewController(withIdentifier: "SignInViewController") as? SignInViewController else {return}
+        
+        nextVC.modalPresentationStyle = .fullScreen
+        self.present(nextVC, animated: true, completion: nil)
+        
+    }
 }
