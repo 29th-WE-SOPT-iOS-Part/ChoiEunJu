@@ -9,6 +9,8 @@ import UIKit
 
 class SignUpViewController: UIViewController, UITextFieldDelegate {
     
+    // MARK: - UI Component Part
+    
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var idTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
@@ -16,6 +18,8 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var nextButton: UIButton!
     
     @IBOutlet weak var checkButton: UIButton!
+    
+    // MARK: - Custom Method Part
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool { // 키보드 사라지도록
         if textField == self.nameTextField {
@@ -30,12 +34,16 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
         return true
         
     }
-
+    
+    // MARK: - Life Cycle Part
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         nextButton.isEnabled = false
     }
 
+    // MARK: - IBAction Part
+    
     @IBAction func textFieldEditingChanged(_ sender: UITextField) {
         if nameTextField.text?.isEmpty == false && idTextField.text?.isEmpty == false && passwordTextField.text?.isEmpty == false{
         nextButton.isEnabled = true

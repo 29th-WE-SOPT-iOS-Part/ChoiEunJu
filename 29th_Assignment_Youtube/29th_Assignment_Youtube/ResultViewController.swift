@@ -9,13 +9,22 @@ import UIKit
 
 class ResultViewController: UIViewController {
     
+    // MARK: - UI Component Part
+    
     @IBOutlet weak var nameLabel: UILabel!
+    
+    // MARK: - Vars & Lets Part
+    
     var name: String?
+    
+    // MARK: - Life Cycle Part
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setNameInLabel()
     }
+    
+    // MARK: - Custom Method Part
     
     func setNameInLabel(){
         if let data = name {
@@ -23,6 +32,8 @@ class ResultViewController: UIViewController {
             nameLabel.sizeToFit() 
         }
     }
+    
+    // MARK: - IBAction Part
     
     @IBAction func touchUpToGoBack(_ sender: Any) {
         guard let nextVC = self.storyboard?.instantiateViewController(withIdentifier: "NavigationController") as? NavigationController else {return}
