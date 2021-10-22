@@ -41,6 +41,7 @@
                                 <fontDescription key="fontDescription" name="SFProDisplay-Regular" family="SF Pro Display" pointSize="15"/>
                                 <textInputTraits key="textInputTraits" returnKeyType="next"/>
                                 <connections>
+                                    <action selector="textFieldEditingChanged:" destination="BYZ-38-t0r" eventType="editingDidEnd" id="l6i-b1-cru"/>
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="atf-9w-2e9"/>
                                 </connections>
                             </textField>
@@ -52,6 +53,7 @@
                                 <fontDescription key="fontDescription" name="SFProDisplay-Regular" family="SF Pro Display" pointSize="15"/>
                                 <textInputTraits key="textInputTraits" returnKeyType="next"/>
                                 <connections>
+                                    <action selector="textFieldEditingChanged:" destination="BYZ-38-t0r" eventType="editingDidEnd" id="qpt-ri-Pes"/>
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="47U-3h-Scg"/>
                                 </connections>
                             </textField>
@@ -63,6 +65,7 @@
                                 <fontDescription key="fontDescription" name="SFProDisplay-Regular" family="SF Pro Display" pointSize="15"/>
                                 <textInputTraits key="textInputTraits" returnKeyType="done" secureTextEntry="YES"/>
                                 <connections>
+                                    <action selector="textFieldEditingChanged:" destination="BYZ-38-t0r" eventType="editingDidEnd" id="nvF-Py-7ZZ"/>
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="dq1-6Q-n3a"/>
                                 </connections>
                             </textField>
@@ -135,6 +138,7 @@
                     <connections>
                         <outlet property="idTextField" destination="qyf-Sl-hqe" id="WCJ-4k-G8b"/>
                         <outlet property="nameTextField" destination="QHw-dk-yrT" id="a6T-qv-DJC"/>
+                        <outlet property="nextButton" destination="doh-fi-rWe" id="QgW-tt-7w2"/>
                         <outlet property="passwordTextField" destination="YKa-Mu-RQI" id="GAU-fa-WXo"/>
                     </connections>
                 </viewController>
@@ -206,15 +210,16 @@
                                     <action selector="touchUpToGoNext:" destination="IE3-CX-pbj" eventType="touchUpInside" id="gRj-0E-kTR"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Vz-CZ-fD1">
-                                <rect key="frame" x="21" y="522.33333333333337" width="18" height="16"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Vz-CZ-fD1">
+                                <rect key="frame" x="21" y="522.33333333333337" width="16" height="16"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="16" id="XQC-WC-GzP"/>
-                                    <constraint firstAttribute="width" constant="18" id="xYR-zu-ziP"/>
+                                    <constraint firstAttribute="width" constant="16" id="xYR-zu-ziP"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="SFProDisplay-Regular" family="SF Pro Display" pointSize="0.0"/>
+                                <color key="tintColor" systemColor="opaqueSeparatorColor"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                <state key="normal" image="checkmark.square" catalog="system"/>
+                                <state key="normal" image="square" catalog="system"/>
                                 <state key="selected" image="checkmark.square" catalog="system"/>
                                 <connections>
                                     <action selector="touchUpToChangeImage:" destination="IE3-CX-pbj" eventType="touchUpInside" id="pB5-A4-9hX"/>
@@ -224,7 +229,7 @@
                                 <rect key="frame" x="130" y="110" width="118" height="40"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="비밀번호 표시" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4xv-QI-8TM">
-                                <rect key="frame" x="50" y="519.33333333333337" width="73" height="21"/>
+                                <rect key="frame" x="48" y="519.33333333333337" width="75" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="ESJ-qf-5Lh"/>
                                 </constraints>
@@ -365,6 +370,10 @@
     <resources>
         <image name="Google_logo" width="118" height="40"/>
         <image name="checkmark.square" catalog="system" width="128" height="114"/>
+        <image name="square" catalog="system" width="128" height="114"/>
+        <systemColor name="opaqueSeparatorColor">
+            <color red="0.77647058823529413" green="0.77647058823529413" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
