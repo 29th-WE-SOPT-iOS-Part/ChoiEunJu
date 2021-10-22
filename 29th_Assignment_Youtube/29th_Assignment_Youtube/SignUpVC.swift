@@ -1,5 +1,5 @@
 //
-//  SignUpViewController.swift
+//  SignUpVC.swift
 //  29th_Assignment_Youtube
 //
 //  Created by EUNJU on 2021/10/07.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class SignUpViewController: UIViewController {
+class SignUpVC: UIViewController {
     
     // MARK: - Vars & Lets Part
     
@@ -70,7 +70,7 @@ class SignUpViewController: UIViewController {
     }
  
     @IBAction func touchUpToGoNext(_ sender: Any) {
-        guard let nextVC = self.storyboard?.instantiateViewController(withIdentifier: "ResultViewController") as? ResultViewController else {return}
+        guard let nextVC = self.storyboard?.instantiateViewController(withIdentifier: "ResultVC") as? ResultVC else {return}
         
         nextVC.name = nameTextField.text
         nextVC.modalPresentationStyle = .fullScreen
@@ -80,7 +80,7 @@ class SignUpViewController: UIViewController {
 
 // MARK: - Extension Part
 
-extension SignUpViewController: UITextFieldDelegate {
+extension SignUpVC: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool { // 키보드 사라지도록
         if textField == self.nameTextField {
             textField.resignFirstResponder()

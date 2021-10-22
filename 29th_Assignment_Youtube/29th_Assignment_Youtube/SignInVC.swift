@@ -1,5 +1,5 @@
 //
-//  SignInViewController.swift
+//  SignInVC.swift
 //  29th_Assignment_Youtube
 //
 //  Created by EUNJU on 2021/10/07.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class SignInViewController: UIViewController {
+class SignInVC: UIViewController {
     
     // MARK: - UI Component Part
     
@@ -35,7 +35,7 @@ class SignInViewController: UIViewController {
     }
     
     @IBAction func touchUpToSendName(_ sender: Any) {
-        guard let nextVC = self.storyboard?.instantiateViewController(withIdentifier: "ResultViewController") as? ResultViewController else {return}
+        guard let nextVC = self.storyboard?.instantiateViewController(withIdentifier: "ResultVC") as? ResultVC else {return}
         
         nextVC.name = nameTextField.text
         nextVC.modalPresentationStyle = .fullScreen
@@ -43,7 +43,7 @@ class SignInViewController: UIViewController {
     }
     
     @IBAction func touchUpToGoSignUpVC(_ sender: Any) {
-        guard let nextVC = self.storyboard?.instantiateViewController(withIdentifier: "SignUpViewController") else {return}
+        guard let nextVC = self.storyboard?.instantiateViewController(withIdentifier: "SignUpVC") else {return}
         
         self.navigationController?.pushViewController(nextVC, animated: true)
     }
@@ -51,7 +51,7 @@ class SignInViewController: UIViewController {
 
 // MARK: - Extension Part
 
-extension SignInViewController: UITextFieldDelegate {
+extension SignInVC: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool { // 키보드 사라지도록
         if textField == self.nameTextField {
             textField.resignFirstResponder()
