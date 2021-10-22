@@ -57,15 +57,6 @@ class SignUpVC: UIViewController {
         }
     }
     @IBAction func touchUpToChangeImage(_ sender: UIButton) {
-//        if checkButton.isSelected {
-//            checkButton.setImage(UIImage.init(systemName: "checkmark.square.fill"), for: .normal)
-//            passwordTextField.isSecureTextEntry = false
-//            checkButton.isSelected = false
-//        } else {
-//            checkButton.setImage(UIImage.init(systemName: "square"), for: .normal)
-//            passwordTextField.isSecureTextEntry = true
-//            checkButton.isSelected = true
-//        }
         isPasswordVisible = !isPasswordVisible
     }
  
