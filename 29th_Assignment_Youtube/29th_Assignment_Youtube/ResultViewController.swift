@@ -39,16 +39,16 @@ class ResultViewController: UIViewController {
         guard let nextVC = self.storyboard?.instantiateViewController(withIdentifier: "NavigationController") as? NavigationController else {return}
         
         nextVC.modalPresentationStyle = .fullScreen
-        nextVC.modalTransitionStyle = .crossDissolve
         self.present(nextVC, animated: true, completion: nil)
+        
         
     }
     
     @IBAction func touchUpToGoTabBar(_ sender: Any) {
         let tabBarStoryBoard = UIStoryboard.init(name: "TabBar", bundle: nil)
-        guard let nextSB = tabBarStoryBoard.instantiateViewController(withIdentifier: "TabBarController") as? TabBarController else {return}
+        guard let nextVC = tabBarStoryBoard.instantiateViewController(withIdentifier: "TabBarController") as? TabBarController else {return}
         
-        nextSB.modalPresentationStyle = .fullScreen
-        present(nextSB, animated: true, completion: nil)
+        nextVC.modalPresentationStyle = .fullScreen
+        present(nextVC, animated: true, completion: nil)
     }    
 }

@@ -7,7 +7,7 @@
 
 import UIKit
 
-class SignInViewController: UIViewController, UITextFieldDelegate {
+class SignInViewController: UIViewController {
     
     // MARK: - UI Component Part
     
@@ -15,28 +15,24 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var idTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     
-    // MARK: - Custom Method Part
-    
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool { // 키보드 사라지도록
-        if textField == self.nameTextField {
-            textField.resignFirstResponder()
-            self.idTextField.becomeFirstResponder()
-        }
-        else if textField == self.idTextField {
-            textField.resignFirstResponder()
-            self.passwordTextField.becomeFirstResponder()
-        }
-        textField.resignFirstResponder()
-        return true
-    }
+    @IBOutlet weak var nextButton: UIButton!
     
     // MARK: - Life Cycle Part
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        nextButton.isEnabled = false
     }
     
     // MARK: - IBAction Part
+    
+    @IBAction func textFieldEditingChanged(_ sender: UITextField) {
+        if nameTextField.text?.isEmpty == false &&
+            idTextField.text?.isEmpty == false &&
+            passwordTextField.text?.isEmpty == false {
+        nextButton.isEnabled = true
+        }
+    }
     
     @IBAction func touchUpToSendName(_ sender: Any) {
         guard let nextVC = self.storyboard?.instantiateViewController(withIdentifier: "ResultViewController") as? ResultViewController else {return}
@@ -50,6 +46,23 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
         guard let nextVC = self.storyboard?.instantiateViewController(withIdentifier: "SignUpViewController") else {return}
         
         self.navigationController?.pushViewController(nextVC, animated: true)
+    }
+}
+
+// MARK: - Extension Part
+
+extension SignInViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool { // 키보드 사라지도록
+        if textField == self.nameTextField {
+            textField.resignFirstResponder()
+            self.idTextField.becomeFirstResponder()
+        }
+        else if textField == self.idTextField {
+            textField.resignFirstResponder()
+            self.passwordTextField.becomeFirstResponder()
+        }
+        textField.resignFirstResponder()
+        return true
     }
 }
 
