@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -13,12 +13,12 @@
             <objects>
                 <viewController id="toT-hq-F9V" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="lD5-kX-zlv">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="Sey-GJ-cQ1"/>
                         <color key="backgroundColor" systemColor="systemTealColor"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Shorts" image="Mask Group" selectedImage="Mask Group" id="SYA-lY-gHX"/>
+                    <tabBarItem key="tabBarItem" title="Shorts" image="shortsIcon" selectedImage="shortsIconFill" id="SYA-lY-gHX"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kdS-gu-gGU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -29,7 +29,7 @@
             <objects>
                 <viewController id="hWc-K0-1Fg" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="rUM-HR-xfN">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="7iE-lt-mAC"/>
                         <color key="backgroundColor" systemColor="systemYellowColor"/>
@@ -45,7 +45,7 @@
             <objects>
                 <viewController id="Ikw-Ju-fh0" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Hbj-yu-Iri">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="VDH-he-cMS"/>
                         <color key="backgroundColor" systemColor="systemOrangeColor"/>
@@ -61,7 +61,7 @@
             <objects>
                 <viewController id="2sb-nb-jrW" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="U3k-K9-NOj">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="ISN-Do-BMc"/>
                         <color key="backgroundColor" systemColor="systemPinkColor"/>
@@ -75,14 +75,57 @@
         <!--홈-->
         <scene sceneID="UEr-m6-5rk">
             <objects>
-                <viewController id="I18-Ha-jyz" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HomeVC" id="I18-Ha-jyz" customClass="HomeVC" customModule="_9th_Assignment_Youtube" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Si9-CJ-TEJ">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="2000"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cND-Hc-M47">
+                                <rect key="frame" x="0.0" y="44" width="375" height="1873"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bPv-ge-7xI">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="1873"/>
+                                        <subviews>
+                                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="J6D-j4-lqs">
+                                                <rect key="frame" x="0.0" y="0.0" width="375" height="1873"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                            </tableView>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="bottom" secondItem="J6D-j4-lqs" secondAttribute="bottom" id="5xr-1m-HJr"/>
+                                            <constraint firstAttribute="trailing" secondItem="J6D-j4-lqs" secondAttribute="trailing" id="Nzn-yQ-mgZ"/>
+                                            <constraint firstItem="J6D-j4-lqs" firstAttribute="leading" secondItem="bPv-ge-7xI" secondAttribute="leading" id="SI1-5O-2Xr"/>
+                                            <constraint firstItem="J6D-j4-lqs" firstAttribute="top" secondItem="bPv-ge-7xI" secondAttribute="top" id="hAp-gj-M83"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="bPv-ge-7xI" firstAttribute="top" secondItem="GG1-4R-bmV" secondAttribute="top" id="Kpo-Cw-fpG"/>
+                                    <constraint firstItem="bPv-ge-7xI" firstAttribute="bottom" secondItem="GG1-4R-bmV" secondAttribute="bottom" constant="128" id="chM-1n-gax"/>
+                                    <constraint firstItem="bPv-ge-7xI" firstAttribute="trailing" secondItem="GG1-4R-bmV" secondAttribute="trailing" constant="240" id="eYy-nr-7Iw"/>
+                                    <constraint firstItem="bPv-ge-7xI" firstAttribute="width" secondItem="EaU-nA-rEN" secondAttribute="width" id="g8e-6d-Waz"/>
+                                    <constraint firstItem="bPv-ge-7xI" firstAttribute="height" secondItem="EaU-nA-rEN" secondAttribute="height" priority="250" id="hxz-fp-wdT"/>
+                                    <constraint firstItem="bPv-ge-7xI" firstAttribute="leading" secondItem="GG1-4R-bmV" secondAttribute="leading" id="jKW-NZ-yzQ"/>
+                                </constraints>
+                                <viewLayoutGuide key="contentLayoutGuide" id="GG1-4R-bmV"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="EaU-nA-rEN"/>
+                            </scrollView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="MAo-nX-rvb"/>
-                        <color key="backgroundColor" systemColor="systemGreenColor"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="MAo-nX-rvb" firstAttribute="trailing" secondItem="cND-Hc-M47" secondAttribute="trailing" id="C90-bD-IIi"/>
+                            <constraint firstItem="cND-Hc-M47" firstAttribute="top" secondItem="MAo-nX-rvb" secondAttribute="top" id="FHd-m7-LDQ"/>
+                            <constraint firstItem="MAo-nX-rvb" firstAttribute="bottom" secondItem="cND-Hc-M47" secondAttribute="bottom" id="U0L-hl-ug7"/>
+                            <constraint firstItem="cND-Hc-M47" firstAttribute="leading" secondItem="MAo-nX-rvb" secondAttribute="leading" id="qk1-je-OaE"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="홈" image="homeIconFill" selectedImage="homeIcon" id="uJW-Jv-Kk8"/>
+                    <size key="freeformSize" width="375" height="2000"/>
+                    <connections>
+                        <outlet property="homeTableView" destination="J6D-j4-lqs" id="lwh-fd-Syt"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3wQ-j6-pK2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -112,16 +155,17 @@
         </scene>
     </scenes>
     <resources>
-        <image name="LibraryIcon" width="32.5" height="32.5"/>
-        <image name="LibraryIconFill" width="32.5" height="32.5"/>
-        <image name="Mask Group" width="22.5" height="28"/>
-        <image name="homeIcon" width="32.5" height="32.5"/>
-        <image name="homeIconFill" width="32.5" height="32.5"/>
-        <image name="plueCircleIcon" width="32.5" height="32.5"/>
-        <image name="subscriptionsIcon" width="32.5" height="32.5"/>
-        <image name="subscriptionsIconFill" width="32.5" height="32.5"/>
-        <systemColor name="systemGreenColor">
-            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <image name="LibraryIcon" width="32.333332061767578" height="32.333332061767578"/>
+        <image name="LibraryIconFill" width="32.333332061767578" height="32.333332061767578"/>
+        <image name="homeIcon" width="32.333332061767578" height="32.333332061767578"/>
+        <image name="homeIconFill" width="32.333332061767578" height="32.333332061767578"/>
+        <image name="plueCircleIcon" width="32.333332061767578" height="32.333332061767578"/>
+        <image name="shortsIcon" width="32.333332061767578" height="32.333332061767578"/>
+        <image name="shortsIconFill" width="32" height="32"/>
+        <image name="subscriptionsIcon" width="32.333332061767578" height="32.333332061767578"/>
+        <image name="subscriptionsIconFill" width="32.333332061767578" height="32.333332061767578"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemOrangeColor">
             <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
