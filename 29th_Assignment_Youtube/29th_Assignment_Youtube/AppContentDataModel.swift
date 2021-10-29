@@ -20,3 +20,12 @@ struct HomeContentData {
         return UIImage(named: profileImageName)
     }
 }
+
+struct ChannelData {
+    let channelTitle: String
+    let channelImageName: String
+    
+    func makeChannelImage() -> UIImage? {
+        return UIImage(named: channelImageName)
+    }
+}
