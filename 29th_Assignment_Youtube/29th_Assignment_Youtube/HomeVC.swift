@@ -11,19 +11,24 @@ class HomeVC: UIViewController {
 
     @IBOutlet weak var homeTableView: UITableView!
     @IBOutlet weak var homeCollectionView: UICollectionView!
+    @IBOutlet weak var categoryCollectionView: UICollectionView!
     
     var homeContentList: [HomeContentData] = []
     var channelList: [ChannelData] = []
+    var categoryList = [String]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         initHomeContentList()
         initChannelList()
+        initCategoryList()
         registerXib()
         homeTableView.dataSource = self
         homeTableView.delegate = self
         homeCollectionView.dataSource = self
         homeCollectionView.delegate = self
+        categoryCollectionView.dataSource = self
+        categoryCollectionView.delegate = self
     }
     
     func registerXib() {
@@ -32,6 +37,9 @@ class HomeVC: UIViewController {
         
         let xibCollectionName = UINib(nibName: HomeCollectionViewCell.identifier, bundle: nil)
         homeCollectionView.register(xibCollectionName, forCellWithReuseIdentifier: HomeCollectionViewCell.identifier)
+        
+        let categoryXib = UINib(nibName: CategoryCollectionViewCell.identifier, bundle: nil)
+        categoryCollectionView.register(categoryXib, forCellWithReuseIdentifier: CategoryCollectionViewCell.identifier)
     }
     
     func initHomeContentList() {
@@ -52,6 +60,12 @@ class HomeVC: UIViewController {
             ChannelData(channelTitle: "DesignPart", channelImageName: "ggamju4"),
             ChannelData(channelTitle: "WebPart", channelImageName: "ggamju5"),
             ChannelData(channelTitle: "PlanPart", channelImageName: "ggamju6"),
+        ])
+    }
+    
+    func initCategoryList() {
+        categoryList.append(contentsOf: [
+            "전체", "오늘", "이어서 시청하기", "시청하기 않음", "실시간", "게시물"
         ])
     }
 }
@@ -81,31 +95,55 @@ extension HomeVC: UICollectionViewDelegate {
 
 extension HomeVC: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 72, height: 104)
+        if collectionView == categoryCollectionView {
+            return CGSize(width: categoryList[indexPath.item].size(withAttributes: [NSAttributedString.Key.font : UIFont.systemFont(ofSize: 14)]).width + 20, height: 32)
+            
+        } else {
+            return CGSize(width: 72, height: 104)
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        return UIEdgeInsets.zero
+        if collectionView == categoryCollectionView {
+            return UIEdgeInsets.init(top: 0, left: 13, bottom: 0, right: 13)
+        } else {
+            return UIEdgeInsets.zero
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return 0
+       return 0
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-        return 0
+        if collectionView == categoryCollectionView {
+            return 9
+        } else {
+            return 0
+        }
     }
 }
 
 extension HomeVC: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return channelList.count
+        if collectionView == categoryCollectionView{
+            return categoryList.count
+        } else {
+            return channelList.count
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HomeCollectionViewCell.identifier, for: indexPath) as? HomeCollectionViewCell else {return UICollectionViewCell()}
-        
-        cell.setData(channelData: channelList[indexPath.row])
-        return cell
+        if collectionView == categoryCollectionView {
+            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CategoryCollectionViewCell.identifier, for: indexPath) as? CategoryCollectionViewCell else {return UICollectionViewCell()}
+            
+            cell.setCategoryData(categoryData: categoryList[indexPath.row])
+            return cell
+        } else {
+            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HomeCollectionViewCell.identifier, for: indexPath) as? HomeCollectionViewCell else {return UICollectionViewCell()}
+            
+            cell.setData(channelData: channelList[indexPath.row])
+            return cell
+        }
     }
 }

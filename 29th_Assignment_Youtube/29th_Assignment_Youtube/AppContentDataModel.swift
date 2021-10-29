@@ -29,3 +29,7 @@ struct ChannelData {
         return UIImage(named: channelImageName)
     }
 }
+
+struct CategoryData {
+    let categoryTitle: String
+}
