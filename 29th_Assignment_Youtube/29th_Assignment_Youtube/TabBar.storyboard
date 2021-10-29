@@ -111,8 +111,55 @@
                             </tableView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="K1g-Dg-Cy9" userLabel="UIView">
                                 <rect key="frame" x="0.0" y="44" width="375" height="44"/>
-                                <color key="backgroundColor" systemColor="opaqueSeparatorColor"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="premiumLogo" translatesAutoresizingMaskIntoConstraints="NO" id="FZ2-E7-S7Z">
+                                        <rect key="frame" x="16" y="11" width="96" height="20"/>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8vf-4l-dku">
+                                        <rect key="frame" x="199" y="6" width="32" height="32"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="8vf-4l-dku" secondAttribute="height" multiplier="1:1" id="APm-1Q-EyU"/>
+                                        </constraints>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" image="windowSharingIcon"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e4R-EA-pyC">
+                                        <rect key="frame" x="274" y="5" width="32" height="32"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="e4R-EA-pyC" secondAttribute="height" multiplier="1:1" id="s8w-tG-Gcl"/>
+                                        </constraints>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" image="SearchIcon"/>
+                                    </button>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="wesoptProfile" translatesAutoresizingMaskIntoConstraints="NO" id="YRH-pr-ezv">
+                                        <rect key="frame" x="323" y="10" width="36" height="24"/>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E5b-WL-7PS">
+                                        <rect key="frame" x="236.66666666666666" y="5" width="31.999999999999972" height="32"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="E5b-WL-7PS" secondAttribute="height" multiplier="1:1" id="DSu-XE-4d9"/>
+                                        </constraints>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" image="notificationIcon"/>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
+                                    <constraint firstItem="YRH-pr-ezv" firstAttribute="top" secondItem="K1g-Dg-Cy9" secondAttribute="top" constant="10" id="4uT-fd-YFG"/>
+                                    <constraint firstAttribute="bottom" secondItem="8vf-4l-dku" secondAttribute="bottom" constant="6" id="8uu-Yd-LAY"/>
+                                    <constraint firstItem="E5b-WL-7PS" firstAttribute="leading" secondItem="8vf-4l-dku" secondAttribute="trailing" constant="5.5" id="AfD-ob-9fO"/>
+                                    <constraint firstItem="e4R-EA-pyC" firstAttribute="top" secondItem="K1g-Dg-Cy9" secondAttribute="top" constant="5" id="DcV-n8-umr"/>
+                                    <constraint firstAttribute="bottom" secondItem="YRH-pr-ezv" secondAttribute="bottom" constant="10" id="HH9-v4-dFU"/>
+                                    <constraint firstItem="FZ2-E7-S7Z" firstAttribute="top" secondItem="K1g-Dg-Cy9" secondAttribute="top" constant="11" id="KAK-8k-Pcb"/>
+                                    <constraint firstAttribute="bottom" secondItem="e4R-EA-pyC" secondAttribute="bottom" constant="7" id="MSk-aj-K3e"/>
+                                    <constraint firstItem="E5b-WL-7PS" firstAttribute="top" secondItem="K1g-Dg-Cy9" secondAttribute="top" constant="5" id="Q1h-Oe-zpw"/>
+                                    <constraint firstItem="e4R-EA-pyC" firstAttribute="leading" secondItem="E5b-WL-7PS" secondAttribute="trailing" constant="5.5" id="Vmu-fc-HF3"/>
+                                    <constraint firstItem="FZ2-E7-S7Z" firstAttribute="leading" secondItem="K1g-Dg-Cy9" secondAttribute="leading" constant="16" id="cU3-TX-qCQ"/>
+                                    <constraint firstItem="8vf-4l-dku" firstAttribute="leading" secondItem="FZ2-E7-S7Z" secondAttribute="trailing" constant="87" id="dCm-ru-1BC"/>
+                                    <constraint firstAttribute="bottom" secondItem="E5b-WL-7PS" secondAttribute="bottom" constant="7" id="eRJ-ph-MzX"/>
+                                    <constraint firstItem="YRH-pr-ezv" firstAttribute="leading" secondItem="e4R-EA-pyC" secondAttribute="trailing" constant="17" id="gyH-UG-3c7"/>
+                                    <constraint firstItem="8vf-4l-dku" firstAttribute="top" secondItem="K1g-Dg-Cy9" secondAttribute="top" constant="6" id="mML-Lt-a11"/>
+                                    <constraint firstAttribute="trailing" secondItem="YRH-pr-ezv" secondAttribute="trailing" constant="16" id="pGR-BP-UON"/>
                                     <constraint firstAttribute="height" constant="44" id="pvV-6r-67e"/>
                                 </constraints>
                             </view>
@@ -169,16 +216,18 @@
     <resources>
         <image name="LibraryIcon" width="32.333332061767578" height="32.333332061767578"/>
         <image name="LibraryIconFill" width="32" height="32.333332061767578"/>
+        <image name="SearchIcon" width="32.333332061767578" height="32"/>
         <image name="homeIcon" width="32.333332061767578" height="32.333332061767578"/>
         <image name="homeIconFill" width="32.333332061767578" height="32.333332061767578"/>
+        <image name="notificationIcon" width="32.333332061767578" height="32"/>
         <image name="plueCircleIcon" width="32.333332061767578" height="32.333332061767578"/>
+        <image name="premiumLogo" width="96.333335876464844" height="20"/>
         <image name="shortsIcon" width="32.333332061767578" height="32.333332061767578"/>
         <image name="shortsIconFill" width="32" height="32"/>
         <image name="subscriptionsIcon" width="32.333332061767578" height="32.333332061767578"/>
         <image name="subscriptionsIconFill" width="32" height="32"/>
-        <systemColor name="opaqueSeparatorColor">
-            <color red="0.77647058823529413" green="0.77647058823529413" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
+        <image name="wesoptProfile" width="36" height="36"/>
+        <image name="windowSharingIcon" width="32.333332061767578" height="32"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
