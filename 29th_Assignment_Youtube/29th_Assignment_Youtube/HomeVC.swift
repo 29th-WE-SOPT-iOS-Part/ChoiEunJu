@@ -9,13 +9,19 @@ import UIKit
 
 class HomeVC: UIViewController {
 
+    // MARK: - UI Component Part
+    
     @IBOutlet weak var homeTableView: UITableView!
     @IBOutlet weak var homeCollectionView: UICollectionView!
     @IBOutlet weak var categoryCollectionView: UICollectionView!
     
+    // MARK: - Vars & Lets Part
+    
     var homeContentList: [HomeContentData] = []
     var channelList: [ChannelData] = []
     var categoryList = [String]()
+    
+    // MARK: - Life Cycle Part
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,6 +36,8 @@ class HomeVC: UIViewController {
         categoryCollectionView.dataSource = self
         categoryCollectionView.delegate = self
     }
+    
+    // MARK: - Custom Method Part
     
     func registerXib() {
         let xibTableName = UINib(nibName: HomeTableViewCell.identifier, bundle: nil)
@@ -69,6 +77,8 @@ class HomeVC: UIViewController {
         ])
     }
 }
+
+// MARK: - Extension Part
 
 extension HomeVC: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

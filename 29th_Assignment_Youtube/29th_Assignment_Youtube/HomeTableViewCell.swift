@@ -8,6 +8,9 @@
 import UIKit
 
 class HomeTableViewCell: UITableViewCell {
+    
+    // MARK: - Vars & Lets Part
+    
     static let identifier = "HomeTableViewCell"
     
     // MARK: - UI Component Part
@@ -18,11 +21,15 @@ class HomeTableViewCell: UITableViewCell {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var subTitleLabel: UILabel!
     
+    // MARK: - Life Cycle Part
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         setUI()
     }
 
+    // MARK: - Custom Method Part
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
     }
@@ -34,6 +41,8 @@ class HomeTableViewCell: UITableViewCell {
         subTitleLabel.text = homeData.videoSubTitle
     }
 }
+
+// MARK: - Extension Part
 
 extension HomeTableViewCell {
     func setUI() {

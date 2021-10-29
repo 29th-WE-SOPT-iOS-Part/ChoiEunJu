@@ -8,21 +8,32 @@
 import UIKit
 
 class HomeCollectionViewCell: UICollectionViewCell {
+    
+    // MARK: - Vars & Lets Part
+    
     static let identifier = "HomeCollectionViewCell"
 
+    // MARK: - UI Component Part
+    
     @IBOutlet weak var channelImageView: UIImageView!
     @IBOutlet weak var channelNameLabel: UILabel!
+    
+    // MARK: - Life Cycle Part
     
     override func awakeFromNib() {
         super.awakeFromNib()
         setUI()
     }
     
+    // MARK: - Custom Method Part
+    
     func setData(channelData: ChannelData) {
         channelImageView.image = channelData.makeChannelImage()
         channelNameLabel.text = channelData.channelTitle
     }
 }
+
+// MARK: - Extension Part
 
 extension HomeCollectionViewCell {
     func setUI() {

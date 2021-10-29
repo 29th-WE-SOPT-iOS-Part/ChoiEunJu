@@ -8,19 +8,30 @@
 import UIKit
 
 class CategoryCollectionViewCell: UICollectionViewCell {
+    
+    // MARK: - Vars & Lets Part
+    
     static let identifier = "CategoryCollectionViewCell"
 
+    // MARK: - UI Component Part
+    
     @IBOutlet weak var categoryLabel: UILabel!
+    
+    // MARK: - Life Cycle Part
     
     override func awakeFromNib() {
         super.awakeFromNib()
         setLabel()
     }
     
+    // MARK: - Custom Method Part
+    
     func setCategoryData(categoryData: String) {
         categoryLabel.text = categoryData
     }
 }
+
+// MARK: - Extension Part
 
 extension CategoryCollectionViewCell {
     func setLabel() {
