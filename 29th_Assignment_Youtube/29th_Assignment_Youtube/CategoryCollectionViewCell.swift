@@ -45,11 +45,6 @@ extension CategoryCollectionViewCell {
         categoryLabel.layer.borderColor = UIColor(red: 0.854, green: 0.854, blue: 0.854, alpha: 1).cgColor
         
         contentView.addSubview(categoryLabel)
-        categoryLabel.translatesAutoresizingMaskIntoConstraints = false
-        categoryLabel.widthAnchor.constraint(equalToConstant: 46).isActive = true
-        categoryLabel.heightAnchor.constraint(equalToConstant: 32).isActive = true
-        categoryLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 13).isActive = true
-        categoryLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 8).isActive = true
     }
 
 }
