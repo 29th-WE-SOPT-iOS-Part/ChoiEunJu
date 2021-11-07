@@ -33,6 +33,10 @@ class SignUpVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         nextButton.isEnabled = false
+        
+        nameTextField.delegate = self
+        idTextField.delegate = self
+        passwordTextField.delegate = self
     }
     
     // MARK: - Custom Method Part

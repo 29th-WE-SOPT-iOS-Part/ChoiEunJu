@@ -42,7 +42,6 @@
                                 <textInputTraits key="textInputTraits" returnKeyType="next"/>
                                 <connections>
                                     <action selector="textFieldEditingChanged:" destination="BYZ-38-t0r" eventType="editingDidEnd" id="l6i-b1-cru"/>
-                                    <outlet property="delegate" destination="BYZ-38-t0r" id="atf-9w-2e9"/>
                                 </connections>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="이메일 또는 휴대전화" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qyf-Sl-hqe">
@@ -54,7 +53,6 @@
                                 <textInputTraits key="textInputTraits" returnKeyType="next"/>
                                 <connections>
                                     <action selector="textFieldEditingChanged:" destination="BYZ-38-t0r" eventType="editingDidEnd" id="qpt-ri-Pes"/>
-                                    <outlet property="delegate" destination="BYZ-38-t0r" id="47U-3h-Scg"/>
                                 </connections>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="비밀번호 입력" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YKa-Mu-RQI">
@@ -66,7 +64,6 @@
                                 <textInputTraits key="textInputTraits" returnKeyType="done" secureTextEntry="YES"/>
                                 <connections>
                                     <action selector="textFieldEditingChanged:" destination="BYZ-38-t0r" eventType="editingDidEnd" id="nvF-Py-7ZZ"/>
-                                    <outlet property="delegate" destination="BYZ-38-t0r" id="dq1-6Q-n3a"/>
                                 </connections>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bHC-yr-dKU">
@@ -169,7 +166,6 @@
                                 <textInputTraits key="textInputTraits" returnKeyType="next"/>
                                 <connections>
                                     <action selector="textFieldEditingChanged:" destination="IE3-CX-pbj" eventType="editingDidEnd" id="7qC-hQ-cz3"/>
-                                    <outlet property="delegate" destination="IE3-CX-pbj" id="WPC-O6-rB9"/>
                                 </connections>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="이메일 또는 휴대전화" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="12A-Ui-HQ7">
@@ -181,7 +177,6 @@
                                 <textInputTraits key="textInputTraits" returnKeyType="next"/>
                                 <connections>
                                     <action selector="textFieldEditingChanged:" destination="IE3-CX-pbj" eventType="editingDidEnd" id="EIp-wf-n97"/>
-                                    <outlet property="delegate" destination="IE3-CX-pbj" id="odf-xV-LTF"/>
                                 </connections>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="비밀번호 입력" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eXf-60-1iZ">
@@ -193,7 +188,6 @@
                                 <textInputTraits key="textInputTraits" returnKeyType="done" secureTextEntry="YES"/>
                                 <connections>
                                     <action selector="textFieldEditingChanged:" destination="IE3-CX-pbj" eventType="editingDidEnd" id="eAp-pr-L6y"/>
-                                    <outlet property="delegate" destination="IE3-CX-pbj" id="B66-3i-h35"/>
                                 </connections>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UuF-ci-0To">
