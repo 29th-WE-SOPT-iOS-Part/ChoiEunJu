@@ -13,6 +13,22 @@ class CategoryCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var categoryLabel: UILabel!
     
+    // MARK: - Vars & Lets Part
+    
+    override var isSelected: Bool {
+        didSet {
+            if isSelected {
+                //select
+                categoryLabel.layer.backgroundColor = UIColor(red: 0.376, green: 0.376, blue: 0.376, alpha: 1).cgColor
+                categoryLabel.textColor = .white
+            } else {
+                //unselect
+                categoryLabel.layer.backgroundColor = UIColor(red: 0.949, green: 0.949, blue: 0.949, alpha: 1).cgColor
+                categoryLabel.textColor = .black
+            }
+        }
+    }
+
     // MARK: - Life Cycle Part
     
     override func awakeFromNib() {
