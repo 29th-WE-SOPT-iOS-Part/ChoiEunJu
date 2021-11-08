@@ -25,32 +25,36 @@ class HomeVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        initHomeContentList()
-        initChannelList()
-        initCategoryList()
-        registerXib()
-        homeTableView.dataSource = self
-        homeTableView.delegate = self
-        homeCollectionView.dataSource = self
-        homeCollectionView.delegate = self
-        categoryCollectionView.dataSource = self
-        categoryCollectionView.delegate = self
+        initDataList()
+        setTableView()
+        setCollectionView()
     }
     
     // MARK: - Custom Method Part
     
-    func registerXib() {
-        let xibTableName = UINib(nibName: HomeTableViewCell.className, bundle: nil)
-        homeTableView.register(xibTableName, forCellReuseIdentifier: HomeTableViewCell.className)
+    func setTableView() {
+        let homeTableXib = UINib(nibName: HomeTableViewCell.className, bundle: nil)
+        homeTableView.register(homeTableXib, forCellReuseIdentifier: HomeTableViewCell.className)
         
-        let xibCollectionName = UINib(nibName: HomeCollectionViewCell.className, bundle: nil)
-        homeCollectionView.register(xibCollectionName, forCellWithReuseIdentifier: HomeCollectionViewCell.className)
+        homeTableView.dataSource = self
+        homeTableView.delegate = self
+    }
+    
+    func setCollectionView() {
+        let subscribeCollectionXib = UINib(nibName: HomeCollectionViewCell.className, bundle: nil)
+        homeCollectionView.register(subscribeCollectionXib, forCellWithReuseIdentifier: HomeCollectionViewCell.className)
+        
+        homeCollectionView.dataSource = self
+        homeCollectionView.delegate = self
         
         let categoryXib = UINib(nibName: CategoryCollectionViewCell.className, bundle: nil)
         categoryCollectionView.register(categoryXib, forCellWithReuseIdentifier: CategoryCollectionViewCell.className)
+        
+        categoryCollectionView.dataSource = self
+        categoryCollectionView.delegate = self
     }
     
-    func initHomeContentList() {
+    func initDataList() {
         homeContentList.append(contentsOf: [
             HomeContentData(videoTitle: "1차 iOS 세미나 : iOS 컴포넌트 이해, Xcode 기본 사용법, View 화면전환", videoSubTitle: "WE SOPT ・조회수 100만회 ・ 3주 전", thumbnailImageName: "wesoptiOSPart1", profileImageName: "wesoptProfile"),
             HomeContentData(videoTitle: "2차 iOS 세미나 : AutoLayout, StackView, TabBarController", videoSubTitle: "WE SOPT ・조회수 100만회 ・ 3주 전", thumbnailImageName: "wesoptiOSPart1", profileImageName: "wesoptProfile"),
@@ -58,9 +62,7 @@ class HomeVC: UIViewController {
             HomeContentData(videoTitle: "4차 iOS 세미나 : Cocoapods & Networking, REST API", videoSubTitle: "WE SOPT ・조회수 100만회 ・ 3주 전", thumbnailImageName: "wesoptiOSPart1", profileImageName: "wesoptProfile"),
             HomeContentData(videoTitle: "7차 iOS 세미나 : Animation과 제스쳐, 데이터 전달 심화 ", videoSubTitle: "WE SOPT ・조회수 100만회 ・ 3주 전", thumbnailImageName: "wesoptiOSPart1", profileImageName: "wesoptProfile"),
         ])
-    }
-    
-    func initChannelList() {
+        
         channelList.append(contentsOf: [
             ChannelData(channelTitle: "iOSPart", channelImageName: "ggamju1"),
             ChannelData(channelTitle: "ServerPart", channelImageName: "ggamju2"),
@@ -69,9 +71,7 @@ class HomeVC: UIViewController {
             ChannelData(channelTitle: "WebPart", channelImageName: "ggamju5"),
             ChannelData(channelTitle: "PlanPart", channelImageName: "ggamju6"),
         ])
-    }
-    
-    func initCategoryList() {
+        
         categoryList.append(contentsOf: [
             "전체", "오늘", "이어서 시청하기", "시청하기 않음", "실시간", "게시물"
         ])
