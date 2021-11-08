@@ -25,32 +25,36 @@ class HomeVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        initHomeContentList()
-        initChannelList()
-        initCategoryList()
-        registerXib()
-        homeTableView.dataSource = self
-        homeTableView.delegate = self
-        homeCollectionView.dataSource = self
-        homeCollectionView.delegate = self
-        categoryCollectionView.dataSource = self
-        categoryCollectionView.delegate = self
+        initDataList()
+        setTableView()
+        setCollectionView()
     }
     
     // MARK: - Custom Method Part
     
-    func registerXib() {
-        let xibTableName = UINib(nibName: HomeTableViewCell.identifier, bundle: nil)
-        homeTableView.register(xibTableName, forCellReuseIdentifier: HomeTableViewCell.identifier)
+    func setTableView() {
+        let homeTableXib = UINib(nibName: HomeTableViewCell.className, bundle: nil)
+        homeTableView.register(homeTableXib, forCellReuseIdentifier: HomeTableViewCell.className)
         
-        let xibCollectionName = UINib(nibName: HomeCollectionViewCell.identifier, bundle: nil)
-        homeCollectionView.register(xibCollectionName, forCellWithReuseIdentifier: HomeCollectionViewCell.identifier)
-        
-        let categoryXib = UINib(nibName: CategoryCollectionViewCell.identifier, bundle: nil)
-        categoryCollectionView.register(categoryXib, forCellWithReuseIdentifier: CategoryCollectionViewCell.identifier)
+        homeTableView.dataSource = self
+        homeTableView.delegate = self
     }
     
-    func initHomeContentList() {
+    func setCollectionView() {
+        let subscribeCollectionXib = UINib(nibName: HomeCollectionViewCell.className, bundle: nil)
+        homeCollectionView.register(subscribeCollectionXib, forCellWithReuseIdentifier: HomeCollectionViewCell.className)
+        
+        homeCollectionView.dataSource = self
+        homeCollectionView.delegate = self
+        
+        let categoryXib = UINib(nibName: CategoryCollectionViewCell.className, bundle: nil)
+        categoryCollectionView.register(categoryXib, forCellWithReuseIdentifier: CategoryCollectionViewCell.className)
+        
+        categoryCollectionView.dataSource = self
+        categoryCollectionView.delegate = self
+    }
+    
+    func initDataList() {
         homeContentList.append(contentsOf: [
             HomeContentData(videoTitle: "1차 iOS 세미나 : iOS 컴포넌트 이해, Xcode 기본 사용법, View 화면전환", videoSubTitle: "WE SOPT ・조회수 100만회 ・ 3주 전", thumbnailImageName: "wesoptiOSPart1", profileImageName: "wesoptProfile"),
             HomeContentData(videoTitle: "2차 iOS 세미나 : AutoLayout, StackView, TabBarController", videoSubTitle: "WE SOPT ・조회수 100만회 ・ 3주 전", thumbnailImageName: "wesoptiOSPart1", profileImageName: "wesoptProfile"),
@@ -58,9 +62,7 @@ class HomeVC: UIViewController {
             HomeContentData(videoTitle: "4차 iOS 세미나 : Cocoapods & Networking, REST API", videoSubTitle: "WE SOPT ・조회수 100만회 ・ 3주 전", thumbnailImageName: "wesoptiOSPart1", profileImageName: "wesoptProfile"),
             HomeContentData(videoTitle: "7차 iOS 세미나 : Animation과 제스쳐, 데이터 전달 심화 ", videoSubTitle: "WE SOPT ・조회수 100만회 ・ 3주 전", thumbnailImageName: "wesoptiOSPart1", profileImageName: "wesoptProfile"),
         ])
-    }
-    
-    func initChannelList() {
+        
         channelList.append(contentsOf: [
             ChannelData(channelTitle: "iOSPart", channelImageName: "ggamju1"),
             ChannelData(channelTitle: "ServerPart", channelImageName: "ggamju2"),
@@ -69,9 +71,7 @@ class HomeVC: UIViewController {
             ChannelData(channelTitle: "WebPart", channelImageName: "ggamju5"),
             ChannelData(channelTitle: "PlanPart", channelImageName: "ggamju6"),
         ])
-    }
-    
-    func initCategoryList() {
+        
         categoryList.append(contentsOf: [
             "전체", "오늘", "이어서 시청하기", "시청하기 않음", "실시간", "게시물"
         ])
@@ -91,7 +91,7 @@ extension HomeVC: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: HomeTableViewCell.identifier) as? HomeTableViewCell else {return UITableViewCell()}
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: HomeTableViewCell.className) as? HomeTableViewCell else {return UITableViewCell()}
         
         cell.setData(homeData: homeContentList[indexPath.row])
         return cell
@@ -113,11 +113,7 @@ extension HomeVC: UICollectionViewDelegateFlowLayout {
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        if collectionView == categoryCollectionView {
-            return UIEdgeInsets.init(top: 0, left: 13, bottom: 0, right: 13)
-        } else {
-            return UIEdgeInsets.zero
-        }
+        return collectionView == categoryCollectionView ? UIEdgeInsets.init(top: 0, left: 13, bottom: 0, right: 13) : UIEdgeInsets.zero
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
@@ -125,31 +121,23 @@ extension HomeVC: UICollectionViewDelegateFlowLayout {
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-        if collectionView == categoryCollectionView {
-            return 9
-        } else {
-            return 0
-        }
+        return collectionView == categoryCollectionView ? 9 : 0
     }
 }
 
 extension HomeVC: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        if collectionView == categoryCollectionView{
-            return categoryList.count
-        } else {
-            return channelList.count
-        }
+        return collectionView == categoryCollectionView ? categoryList.count : channelList.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if collectionView == categoryCollectionView {
-            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CategoryCollectionViewCell.identifier, for: indexPath) as? CategoryCollectionViewCell else {return UICollectionViewCell()}
+            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CategoryCollectionViewCell.className, for: indexPath) as? CategoryCollectionViewCell else {return UICollectionViewCell()}
             
             cell.setCategoryData(categoryData: categoryList[indexPath.row])
             return cell
         } else {
-            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HomeCollectionViewCell.identifier, for: indexPath) as? HomeCollectionViewCell else {return UICollectionViewCell()}
+            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HomeCollectionViewCell.className, for: indexPath) as? HomeCollectionViewCell else {return UICollectionViewCell()}
             
             cell.setData(channelData: channelList[indexPath.row])
             return cell

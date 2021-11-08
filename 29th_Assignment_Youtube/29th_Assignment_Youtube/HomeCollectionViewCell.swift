@@ -8,10 +8,6 @@
 import UIKit
 
 class HomeCollectionViewCell: UICollectionViewCell {
-    
-    // MARK: - Vars & Lets Part
-    
-    static let identifier = "HomeCollectionViewCell"
 
     // MARK: - UI Component Part
     
@@ -41,3 +37,4 @@ extension HomeCollectionViewCell {
         channelNameLabel.textColor = UIColor(red: 0.376, green: 0.376, blue: 0.376, alpha: 1)
     }
 }
+

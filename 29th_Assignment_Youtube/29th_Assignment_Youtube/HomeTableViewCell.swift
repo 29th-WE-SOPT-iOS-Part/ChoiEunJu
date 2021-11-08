@@ -9,10 +9,6 @@ import UIKit
 
 class HomeTableViewCell: UITableViewCell {
     
-    // MARK: - Vars & Lets Part
-    
-    static let identifier = "HomeTableViewCell"
-    
     // MARK: - UI Component Part
     
     @IBOutlet weak var thumbnailImageView: UIImageView!
@@ -53,5 +49,15 @@ extension HomeTableViewCell {
         subTitleLabel.font = UIFont(name: "SFProDisplay-Regular", size: 13)
         subTitleLabel.numberOfLines = 0
         subTitleLabel.textColor = UIColor(red: 0.376, green: 0.376, blue: 0.376, alpha: 1)
+    }
+}
+
+extension UIView {
+    static var className: String {
+        NSStringFromClass(self.classForCoder()).components(separatedBy: ".").last!
+    }
+    
+     var className: String {
+        NSStringFromClass(self.classForCoder).components(separatedBy: ".").last!
     }
 }
