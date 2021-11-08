@@ -40,14 +40,14 @@ class HomeVC: UIViewController {
     // MARK: - Custom Method Part
     
     func registerXib() {
-        let xibTableName = UINib(nibName: HomeTableViewCell.identifier, bundle: nil)
-        homeTableView.register(xibTableName, forCellReuseIdentifier: HomeTableViewCell.identifier)
+        let xibTableName = UINib(nibName: HomeTableViewCell.className, bundle: nil)
+        homeTableView.register(xibTableName, forCellReuseIdentifier: HomeTableViewCell.className)
         
-        let xibCollectionName = UINib(nibName: HomeCollectionViewCell.identifier, bundle: nil)
-        homeCollectionView.register(xibCollectionName, forCellWithReuseIdentifier: HomeCollectionViewCell.identifier)
+        let xibCollectionName = UINib(nibName: HomeCollectionViewCell.className, bundle: nil)
+        homeCollectionView.register(xibCollectionName, forCellWithReuseIdentifier: HomeCollectionViewCell.className)
         
-        let categoryXib = UINib(nibName: CategoryCollectionViewCell.identifier, bundle: nil)
-        categoryCollectionView.register(categoryXib, forCellWithReuseIdentifier: CategoryCollectionViewCell.identifier)
+        let categoryXib = UINib(nibName: CategoryCollectionViewCell.className, bundle: nil)
+        categoryCollectionView.register(categoryXib, forCellWithReuseIdentifier: CategoryCollectionViewCell.className)
     }
     
     func initHomeContentList() {
@@ -91,7 +91,7 @@ extension HomeVC: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: HomeTableViewCell.identifier) as? HomeTableViewCell else {return UITableViewCell()}
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: HomeTableViewCell.className) as? HomeTableViewCell else {return UITableViewCell()}
         
         cell.setData(homeData: homeContentList[indexPath.row])
         return cell
@@ -113,11 +113,7 @@ extension HomeVC: UICollectionViewDelegateFlowLayout {
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        if collectionView == categoryCollectionView {
-            return UIEdgeInsets.init(top: 0, left: 13, bottom: 0, right: 13)
-        } else {
-            return UIEdgeInsets.zero
-        }
+        return collectionView == categoryCollectionView ? UIEdgeInsets.init(top: 0, left: 13, bottom: 0, right: 13) : UIEdgeInsets.zero
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
@@ -125,31 +121,23 @@ extension HomeVC: UICollectionViewDelegateFlowLayout {
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-        if collectionView == categoryCollectionView {
-            return 9
-        } else {
-            return 0
-        }
+        return collectionView == categoryCollectionView ? 9 : 0
     }
 }
 
 extension HomeVC: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        if collectionView == categoryCollectionView{
-            return categoryList.count
-        } else {
-            return channelList.count
-        }
+        return collectionView == categoryCollectionView ? categoryList.count : channelList.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if collectionView == categoryCollectionView {
-            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CategoryCollectionViewCell.identifier, for: indexPath) as? CategoryCollectionViewCell else {return UICollectionViewCell()}
+            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CategoryCollectionViewCell.className, for: indexPath) as? CategoryCollectionViewCell else {return UICollectionViewCell()}
             
             cell.setCategoryData(categoryData: categoryList[indexPath.row])
             return cell
         } else {
-            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HomeCollectionViewCell.identifier, for: indexPath) as? HomeCollectionViewCell else {return UICollectionViewCell()}
+            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HomeCollectionViewCell.className, for: indexPath) as? HomeCollectionViewCell else {return UICollectionViewCell()}
             
             cell.setData(channelData: channelList[indexPath.row])
             return cell

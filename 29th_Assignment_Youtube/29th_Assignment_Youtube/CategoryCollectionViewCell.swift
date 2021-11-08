@@ -9,10 +9,6 @@ import UIKit
 
 class CategoryCollectionViewCell: UICollectionViewCell {
     
-    // MARK: - Vars & Lets Part
-    
-    static let identifier = "CategoryCollectionViewCell"
-
     // MARK: - UI Component Part
     
     @IBOutlet weak var categoryLabel: UILabel!
@@ -46,5 +42,4 @@ extension CategoryCollectionViewCell {
         
         contentView.addSubview(categoryLabel)
     }
-
 }
