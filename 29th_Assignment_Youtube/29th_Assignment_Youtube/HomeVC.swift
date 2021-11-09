@@ -14,6 +14,7 @@ class HomeVC: UIViewController {
     @IBOutlet weak var homeTableView: UITableView!
     @IBOutlet weak var homeCollectionView: UICollectionView!
     @IBOutlet weak var categoryCollectionView: UICollectionView!
+    @IBOutlet weak var profileButton: UIButton!
     
     // MARK: - Vars & Lets Part
     
@@ -28,6 +29,14 @@ class HomeVC: UIViewController {
         initDataList()
         setTableView()
         setCollectionView()
+    }
+
+    @IBAction func touchUpToGoSignInVC(_ sender: Any) {
+        let MainStoryBoard = UIStoryboard.init(name: "Main", bundle: nil)
+        guard let nextVC = MainStoryBoard.instantiateViewController(withIdentifier: "NavigationController") as? NavigationController else {return}
+        
+        nextVC.modalPresentationStyle = .fullScreen
+        present(nextVC, animated: true, completion: nil)
     }
     
     // MARK: - Custom Method Part

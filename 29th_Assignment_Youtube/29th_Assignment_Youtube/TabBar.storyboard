@@ -81,14 +81,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="2000"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uRN-D9-Dnh">
-                                <rect key="frame" x="0.0" y="192" width="375" height="1"/>
-                                <color key="backgroundColor" systemColor="systemGray2Color"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="1" id="dhw-kh-Grt"/>
-                                </constraints>
-                            </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="K1g-Dg-Cy9" userLabel="UIView">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="K1g-Dg-Cy9" userLabel="TopBarView">
                                 <rect key="frame" x="0.0" y="44" width="375" height="44"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="premiumLogo" translatesAutoresizingMaskIntoConstraints="NO" id="FZ2-E7-S7Z">
@@ -125,13 +118,19 @@
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" image="SearchIcon"/>
                                     </button>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="wesoptProfile" translatesAutoresizingMaskIntoConstraints="NO" id="YRH-pr-ezv">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yu1-wF-5kw">
                                         <rect key="frame" x="335" y="10" width="24" height="24"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="24" id="8kh-1Q-5pC"/>
-                                            <constraint firstAttribute="height" constant="24" id="AJR-AU-x8M"/>
+                                            <constraint firstAttribute="height" constant="24" id="7NN-nK-zdM"/>
+                                            <constraint firstAttribute="width" secondItem="yu1-wF-5kw" secondAttribute="height" multiplier="1:1" id="8cL-2g-M2J"/>
+                                            <constraint firstAttribute="width" constant="24" id="Uhh-k7-bHF"/>
                                         </constraints>
-                                    </imageView>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" image="wesoptProfile"/>
+                                        <connections>
+                                            <action selector="touchUpToGoSignInVC:" destination="I18-Ha-jyz" eventType="touchUpInside" id="pPc-BX-1py"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
@@ -141,16 +140,23 @@
                                     <constraint firstItem="FZ2-E7-S7Z" firstAttribute="top" secondItem="K1g-Dg-Cy9" secondAttribute="top" constant="11" id="KAK-8k-Pcb"/>
                                     <constraint firstItem="e4R-EA-pyC" firstAttribute="top" secondItem="K1g-Dg-Cy9" secondAttribute="top" constant="5" id="WRt-zK-Qe7"/>
                                     <constraint firstAttribute="bottom" secondItem="FZ2-E7-S7Z" secondAttribute="bottom" constant="13" id="XLk-J6-u6K"/>
-                                    <constraint firstAttribute="trailing" secondItem="YRH-pr-ezv" secondAttribute="trailing" constant="16" id="YsR-K2-udO"/>
-                                    <constraint firstAttribute="bottom" secondItem="YRH-pr-ezv" secondAttribute="bottom" constant="10" id="a4m-vZ-9d6"/>
                                     <constraint firstItem="e4R-EA-pyC" firstAttribute="leading" secondItem="E5b-WL-7PS" secondAttribute="trailing" constant="11" id="akA-hN-heb"/>
-                                    <constraint firstItem="YRH-pr-ezv" firstAttribute="leading" secondItem="e4R-EA-pyC" secondAttribute="trailing" constant="17" id="eAh-16-EDv"/>
                                     <constraint firstItem="FZ2-E7-S7Z" firstAttribute="leading" secondItem="K1g-Dg-Cy9" secondAttribute="leading" constant="16" id="fsC-Lo-IF2"/>
+                                    <constraint firstItem="yu1-wF-5kw" firstAttribute="leading" secondItem="e4R-EA-pyC" secondAttribute="trailing" constant="17" id="lEu-Xk-Q4B"/>
+                                    <constraint firstItem="yu1-wF-5kw" firstAttribute="top" secondItem="K1g-Dg-Cy9" secondAttribute="top" constant="10" id="m4c-4g-LDg"/>
+                                    <constraint firstAttribute="trailing" secondItem="yu1-wF-5kw" secondAttribute="trailing" constant="16" id="m6v-HF-PCy"/>
                                     <constraint firstItem="8vf-4l-dku" firstAttribute="top" secondItem="K1g-Dg-Cy9" secondAttribute="top" constant="6" id="mML-Lt-a11"/>
                                     <constraint firstItem="E5b-WL-7PS" firstAttribute="leading" secondItem="8vf-4l-dku" secondAttribute="trailing" constant="12" id="p7r-OC-yDK"/>
                                     <constraint firstAttribute="height" constant="44" id="pvV-6r-67e"/>
-                                    <constraint firstItem="YRH-pr-ezv" firstAttribute="top" secondItem="K1g-Dg-Cy9" secondAttribute="top" constant="10" id="reh-0W-syV"/>
+                                    <constraint firstAttribute="bottom" secondItem="yu1-wF-5kw" secondAttribute="bottom" constant="10" id="qa5-a7-TLH"/>
                                     <constraint firstAttribute="bottom" secondItem="E5b-WL-7PS" secondAttribute="bottom" constant="7" id="saG-M3-qK2"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uRN-D9-Dnh">
+                                <rect key="frame" x="0.0" y="192" width="375" height="1"/>
+                                <color key="backgroundColor" systemColor="systemGray2Color"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1" id="dhw-kh-Grt"/>
                                 </constraints>
                             </view>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Trk-hm-I3P">
@@ -233,6 +239,7 @@
                         <outlet property="categoryCollectionView" destination="aT5-7h-lQX" id="oLu-YI-mhR"/>
                         <outlet property="homeCollectionView" destination="Trk-hm-I3P" id="a4C-cO-x1k"/>
                         <outlet property="homeTableView" destination="J6D-j4-lqs" id="lwh-fd-Syt"/>
+                        <outlet property="profileButton" destination="yu1-wF-5kw" id="1p7-OA-Wqg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3wQ-j6-pK2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -275,7 +282,7 @@
         <image name="shortsIconFill" width="32" height="32"/>
         <image name="subscriptionsIcon" width="32.333332061767578" height="32.333332061767578"/>
         <image name="subscriptionsIconFill" width="32" height="32"/>
-        <image name="wesoptProfile" width="36" height="36"/>
+        <image name="wesoptProfile" width="24" height="24"/>
         <image name="windowSharingIcon" width="32.333332061767578" height="32"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
