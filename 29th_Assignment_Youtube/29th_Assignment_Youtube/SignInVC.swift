@@ -39,17 +39,30 @@ class SignInVC: UIViewController {
     }
     
     @IBAction func touchUpToSendName(_ sender: Any) {
-        guard let nextVC = self.storyboard?.instantiateViewController(withIdentifier: "ResultVC") as? ResultVC else {return}
-        
-        nextVC.name = nameTextField.text
-        nextVC.modalPresentationStyle = .fullScreen
-        self.present(nextVC, animated: true, completion: nil)
+        requestLogin()
     }
     
     @IBAction func touchUpToGoSignUpVC(_ sender: Any) {
         guard let nextVC = self.storyboard?.instantiateViewController(withIdentifier: "SignUpVC") else {return}
         
         self.navigationController?.pushViewController(nextVC, animated: true)
+    }
+    
+    func simpleAlert(title: String, message: String) {
+        let alert = UIAlertController(title: title,
+                                      message: message,
+                                      preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "확인" ,style: .default) {_ in
+            if message == "로그인 성공" {
+                guard let nextVC = self.storyboard?.instantiateViewController(withIdentifier: "ResultVC") as? ResultVC else {return}
+                
+                nextVC.name = self.nameTextField.text
+                nextVC.modalPresentationStyle = .fullScreen
+                self.present(nextVC, animated: true, completion: nil)
+            }
+        }
+        alert.addAction(okAction)
+        present(alert, animated: true)
     }
 }
 
@@ -67,6 +80,30 @@ extension SignInVC: UITextFieldDelegate {
         }
         textField.resignFirstResponder()
         return true
+    }
+}
+
+extension SignInVC {
+    func requestLogin(){
+        UserSignService.shared.login(email: idTextField.text ?? "", password: passwordTextField.text ?? "") {
+            responseData in switch responseData{
+            case .success(let loginResponse):
+                guard let response = loginResponse as? LoginResponseData else {return}
+                if let userData = response.data {
+                    self.simpleAlert(title: "로그인", message: "로그인 성공")
+                }
+                
+            case .requestErr(let msg):
+                print("requestERR \(msg)")
+            case .pathErr:
+                print("pathErr")
+                self.simpleAlert(title: "로그인", message: "존재하지 않는 회원입니다.")
+            case .serverErr:
+                print("serverErr")
+            case .networkFail:
+                print("networkFail")
+            }
+        }
     }
 }
 

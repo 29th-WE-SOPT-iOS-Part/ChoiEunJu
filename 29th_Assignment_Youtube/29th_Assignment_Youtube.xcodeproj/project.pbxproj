@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		772C141B273AA7E000BB0127 /* APIConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 772C141A273AA7E000BB0127 /* APIConstants.swift */; };
+		772C141D273AA95000BB0127 /* NetworkResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 772C141C273AA95000BB0127 /* NetworkResult.swift */; };
+		772C141F273AA9C100BB0127 /* LoginResponseDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 772C141E273AA9C100BB0127 /* LoginResponseDataModel.swift */; };
+		772C1421273AAAD700BB0127 /* UserSignService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 772C1420273AAAD700BB0127 /* UserSignService.swift */; };
 		77AF1B372719E018007401DA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 77AF1B362719E018007401DA /* Assets.xcassets */; };
 		77AF1B392719E79D007401DA /* SF-Pro-Display-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 77AF1B382719E79D007401DA /* SF-Pro-Display-Regular.otf */; };
 		77AF1B3B2719E7DB007401DA /* SF-Pro-Display-Semibold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 77AF1B3A2719E7DB007401DA /* SF-Pro-Display-Semibold.otf */; };
@@ -34,6 +38,10 @@
 
 /* Begin PBXFileReference section */
 		126E61C2C861EE477EDEF532 /* Pods_29th_Assignment_Youtube.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_29th_Assignment_Youtube.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		772C141A273AA7E000BB0127 /* APIConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIConstants.swift; sourceTree = "<group>"; };
+		772C141C273AA95000BB0127 /* NetworkResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkResult.swift; sourceTree = "<group>"; };
+		772C141E273AA9C100BB0127 /* LoginResponseDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginResponseDataModel.swift; sourceTree = "<group>"; };
+		772C1420273AAAD700BB0127 /* UserSignService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSignService.swift; sourceTree = "<group>"; };
 		77AF1B362719E018007401DA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		77AF1B382719E79D007401DA /* SF-Pro-Display-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "SF-Pro-Display-Regular.otf"; path = "../../../../../../../../../Library/Fonts/SF-Pro-Display-Regular.otf"; sourceTree = "<group>"; };
 		77AF1B3A2719E7DB007401DA /* SF-Pro-Display-Semibold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "SF-Pro-Display-Semibold.otf"; path = "../../../../../../../../../Library/Fonts/SF-Pro-Display-Semibold.otf"; sourceTree = "<group>"; };
@@ -104,6 +112,10 @@
 			isa = PBXGroup;
 			children = (
 				77ECCD5A270DFE220090DDF8 /* Info.plist */,
+				772C141A273AA7E000BB0127 /* APIConstants.swift */,
+				772C141C273AA95000BB0127 /* NetworkResult.swift */,
+				772C1420273AAAD700BB0127 /* UserSignService.swift */,
+				772C141E273AA9C100BB0127 /* LoginResponseDataModel.swift */,
 				77ECCD52270DFE1F0090DDF8 /* Main.storyboard */,
 				77AF1B40271B57AD007401DA /* TabBar.storyboard */,
 				77C96F78272A6E4700A5E44E /* HomeTableViewCell.xib */,
@@ -136,7 +148,6 @@
 				813993321E1E762683C977C9 /* Pods-29th_Assignment_Youtube.debug.xcconfig */,
 				D3741137E771D57A236DFE73 /* Pods-29th_Assignment_Youtube.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -263,7 +274,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				77AF1B3F271B5115007401DA /* NavigationController.swift in Sources */,
+				772C1421273AAAD700BB0127 /* UserSignService.swift in Sources */,
 				77C96F7C272A7AAF00A5E44E /* AppContentDataModel.swift in Sources */,
+				772C141F273AA9C100BB0127 /* LoginResponseDataModel.swift in Sources */,
+				772C141B273AA7E000BB0127 /* APIConstants.swift in Sources */,
 				77C96F76272A433800A5E44E /* HomeVC.swift in Sources */,
 				77ECCD63270E14510090DDF8 /* ResultVC.swift in Sources */,
 				77C96F89272C16EA00A5E44E /* CategoryCollectionViewCell.swift in Sources */,
@@ -274,6 +288,7 @@
 				77C96F79272A6E4700A5E44E /* HomeTableViewCell.swift in Sources */,
 				77ECCD61270E141B0090DDF8 /* SignUpVC.swift in Sources */,
 				77ECCD4F270DFE1F0090DDF8 /* SceneDelegate.swift in Sources */,
+				772C141D273AA95000BB0127 /* NetworkResult.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
