@@ -13,10 +13,6 @@ class ResultVC: UIViewController {
     
     @IBOutlet weak var nameLabel: UILabel!
     
-    // MARK: - Vars & Lets Part
-    
-    var name: String?
-    
     // MARK: - Life Cycle Part
     
     override func viewDidLoad() {
@@ -27,9 +23,9 @@ class ResultVC: UIViewController {
     // MARK: - Custom Method Part
     
     func setNameInLabel(){
-        if let data = name {
-            nameLabel.text = data + "님 환영합니다!"
-            nameLabel.sizeToFit() 
+        if let userName = UserDefaults.standard.string(forKey: "userName") {
+            nameLabel.text = "\(userName)님 환영합니다!"
+            nameLabel.sizeToFit()
         }
     }
     
@@ -40,8 +36,6 @@ class ResultVC: UIViewController {
         
         nextVC.modalPresentationStyle = .fullScreen
         self.present(nextVC, animated: true, completion: nil)
-        
-        
     }
     
     @IBAction func touchUpToGoTabBar(_ sender: Any) {

@@ -75,8 +75,6 @@ class SignUpVC: UIViewController {
         let okAction = UIAlertAction(title: "확인" ,style: .default) {_ in
             if message == "회원가입 성공" {
                 guard let nextVC = self.storyboard?.instantiateViewController(withIdentifier: "ResultVC") as? ResultVC else {return}
-                
-                nextVC.name = self.nameTextField.text
                 nextVC.modalPresentationStyle = .fullScreen
                 self.present(nextVC, animated: true, completion: nil)
             }
@@ -108,8 +106,11 @@ extension SignUpVC {
         UserSignService.shared.signUp(email: idTextField.text ?? "", name: nameTextField.text ?? "", password: passwordTextField.text ?? "") {
             responseData in switch responseData{
             case .success(let signUpResponse):
-                print("\(signUpResponse)")
-                self.simpleAlert(title: "회원가입", message: "회원가입 성공")
+                guard let response = signUpResponse as? SignResponseData else {return}
+                if response.data != nil {
+                    UserDefaults.standard.set(self.nameTextField.text, forKey: "userName")
+                    self.simpleAlert(title: "회원가입", message: "회원가입 성공")
+                }
             case .requestErr(let msg):
                 print("requestERR \(msg)")
             case .pathErr:

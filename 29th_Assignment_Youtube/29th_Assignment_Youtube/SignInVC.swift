@@ -55,8 +55,6 @@ class SignInVC: UIViewController {
         let okAction = UIAlertAction(title: "확인" ,style: .default) {_ in
             if message == "로그인 성공" {
                 guard let nextVC = self.storyboard?.instantiateViewController(withIdentifier: "ResultVC") as? ResultVC else {return}
-                
-                nextVC.name = self.nameTextField.text
                 nextVC.modalPresentationStyle = .fullScreen
                 self.present(nextVC, animated: true, completion: nil)
             }
@@ -88,8 +86,11 @@ extension SignInVC {
         UserSignService.shared.login(email: idTextField.text ?? "", password: passwordTextField.text ?? "") {
             responseData in switch responseData{
             case .success(let loginResponse):
-                print("\(loginResponse)")
-                self.simpleAlert(title: "로그인", message: "로그인 성공")
+                guard let response = loginResponse as? SignResponseData else {return}
+                if response.data != nil {
+                    UserDefaults.standard.set(self.nameTextField.text, forKey: "userName")
+                    self.simpleAlert(title: "로그인", message: "로그인 성공")
+                }
             case .requestErr(let msg):
                 print("requestERR \(msg)")
             case .pathErr:
