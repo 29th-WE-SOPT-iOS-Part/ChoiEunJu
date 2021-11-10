@@ -65,11 +65,29 @@ class SignUpVC: UIViewController {
     }
  
     @IBAction func touchUpToGoNext(_ sender: Any) {
-        guard let nextVC = self.storyboard?.instantiateViewController(withIdentifier: "ResultVC") as? ResultVC else {return}
-        
-        nextVC.name = nameTextField.text
-        nextVC.modalPresentationStyle = .fullScreen
-        self.present(nextVC, animated: true, completion: nil)
+        requestSignUp()
+//        guard let nextVC = self.storyboard?.instantiateViewController(withIdentifier: "ResultVC") as? ResultVC else {return}
+//
+//        nextVC.name = nameTextField.text
+//        nextVC.modalPresentationStyle = .fullScreen
+//        self.present(nextVC, animated: true, completion: nil)
+    }
+    
+    func simpleAlert(title: String, message: String) {
+        let alert = UIAlertController(title: title,
+                                      message: message,
+                                      preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "확인" ,style: .default) {_ in
+            if message == "회원가입 성공" {
+                guard let nextVC = self.storyboard?.instantiateViewController(withIdentifier: "ResultVC") as? ResultVC else {return}
+                
+                nextVC.name = self.nameTextField.text
+                nextVC.modalPresentationStyle = .fullScreen
+                self.present(nextVC, animated: true, completion: nil)
+            }
+        }
+        alert.addAction(okAction)
+        present(alert, animated: true)
     }
 }
 
@@ -87,5 +105,29 @@ extension SignUpVC: UITextFieldDelegate {
         }
         textField.resignFirstResponder()
         return true
+    }
+}
+
+extension SignUpVC {
+    func requestSignUp(){
+        UserSignService.shared.signUp(email: idTextField.text ?? "", name: nameTextField.text ?? "", password: passwordTextField.text ?? "") {
+            responseData in switch responseData{
+            case .success(let loginResponse):
+                guard let response = loginResponse as? LoginResponseData else {return}
+                if let userData = response.data {
+                    self.simpleAlert(title: "회원가입", message: "회원가입 성공")
+                }
+                
+            case .requestErr(let msg):
+                print("requestERR \(msg)")
+            case .pathErr:
+                print("pathErr")
+                self.simpleAlert(title: "회원가입", message: "이미 사용중인 이메일입니다.")
+            case .serverErr:
+                print("serverErr")
+            case .networkFail:
+                print("networkFail")
+            }
+        }
     }
 }
