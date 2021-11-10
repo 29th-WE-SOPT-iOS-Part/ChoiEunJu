@@ -88,11 +88,8 @@ extension SignInVC {
         UserSignService.shared.login(email: idTextField.text ?? "", password: passwordTextField.text ?? "") {
             responseData in switch responseData{
             case .success(let loginResponse):
-                guard let response = loginResponse as? LoginResponseData else {return}
-                if let userData = response.data {
-                    self.simpleAlert(title: "로그인", message: "로그인 성공")
-                }
-                
+                print("\(loginResponse)")
+                self.simpleAlert(title: "로그인", message: "로그인 성공")
             case .requestErr(let msg):
                 print("requestERR \(msg)")
             case .pathErr:

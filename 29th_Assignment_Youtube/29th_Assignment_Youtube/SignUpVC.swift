@@ -113,11 +113,8 @@ extension SignUpVC {
         UserSignService.shared.signUp(email: idTextField.text ?? "", name: nameTextField.text ?? "", password: passwordTextField.text ?? "") {
             responseData in switch responseData{
             case .success(let loginResponse):
-                guard let response = loginResponse as? LoginResponseData else {return}
-                if let userData = response.data {
-                    self.simpleAlert(title: "회원가입", message: "회원가입 성공")
-                }
-                
+                print("\(loginResponse)")
+                self.simpleAlert(title: "회원가입", message: "회원가입 성공")
             case .requestErr(let msg):
                 print("requestERR \(msg)")
             case .pathErr:
