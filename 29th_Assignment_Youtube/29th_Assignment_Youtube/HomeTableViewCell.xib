@@ -88,7 +88,7 @@
     </objects>
     <resources>
         <image name="moreMenuIcon" width="26" height="26"/>
-        <image name="wesoptProfile" width="36" height="36"/>
+        <image name="wesoptProfile" width="24" height="24"/>
         <image name="wesoptiOSPart1" width="375" height="212"/>
         <systemColor name="systemGrayColor">
             <color red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

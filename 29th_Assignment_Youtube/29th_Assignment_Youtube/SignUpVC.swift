@@ -66,11 +66,6 @@ class SignUpVC: UIViewController {
  
     @IBAction func touchUpToGoNext(_ sender: Any) {
         requestSignUp()
-//        guard let nextVC = self.storyboard?.instantiateViewController(withIdentifier: "ResultVC") as? ResultVC else {return}
-//
-//        nextVC.name = nameTextField.text
-//        nextVC.modalPresentationStyle = .fullScreen
-//        self.present(nextVC, animated: true, completion: nil)
     }
     
     func simpleAlert(title: String, message: String) {
@@ -112,8 +107,8 @@ extension SignUpVC {
     func requestSignUp(){
         UserSignService.shared.signUp(email: idTextField.text ?? "", name: nameTextField.text ?? "", password: passwordTextField.text ?? "") {
             responseData in switch responseData{
-            case .success(let loginResponse):
-                print("\(loginResponse)")
+            case .success(let signUpResponse):
+                print("\(signUpResponse)")
                 self.simpleAlert(title: "회원가입", message: "회원가입 성공")
             case .requestErr(let msg):
                 print("requestERR \(msg)")

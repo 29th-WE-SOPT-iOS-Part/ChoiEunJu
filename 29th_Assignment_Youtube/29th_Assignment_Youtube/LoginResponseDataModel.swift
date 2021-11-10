@@ -7,7 +7,7 @@
 
 import Foundation
 
-// MARK: - LoginResponseData
+// MARK: - ResponseData
 
 struct LoginResponseData: Codable {
     let status: Int
@@ -16,9 +16,25 @@ struct LoginResponseData: Codable {
     let data: LoginResultData?
 }
 
-// MARK: - LoginResultData
+struct SignUpResponseData: Codable {
+    let status: Int
+    let success: Bool
+    let message: String
+    let data: SignUpResultData?
+}
+
+// MARK: - ResultData
 
 struct LoginResultData: Codable {
     let id: Int
-    let name, email: String
+    let name: String
+    let email: String
 }
+
+struct SignUpResultData: Codable {
+    let id: Int
+    let name: String
+    let password: Int
+    let email: String
+}
+
