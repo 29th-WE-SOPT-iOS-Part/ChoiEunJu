@@ -33,7 +33,7 @@ class HomeVC: UIViewController {
 
     @IBAction func touchUpToGoSignInVC(_ sender: Any) {
         let MainStoryBoard = UIStoryboard.init(name: "Main", bundle: nil)
-        guard let nextVC = MainStoryBoard.instantiateViewController(withIdentifier: "NavigationController") as? NavigationController else {return}
+        guard let nextVC = MainStoryBoard.instantiateViewController(withIdentifier: NavigationController.className) as? NavigationController else {return}
         
         nextVC.modalPresentationStyle = .fullScreen
         present(nextVC, animated: true, completion: nil)

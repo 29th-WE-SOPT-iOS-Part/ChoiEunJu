@@ -32,7 +32,7 @@ class ResultVC: UIViewController {
     // MARK: - IBAction Part
     
     @IBAction func touchUpToGoBack(_ sender: Any) {
-        guard let nextVC = self.storyboard?.instantiateViewController(withIdentifier: "NavigationController") as? NavigationController else {return}
+        guard let nextVC = self.storyboard?.instantiateViewController(withIdentifier: NavigationController.className) as? NavigationController else {return}
         
         nextVC.modalPresentationStyle = .fullScreen
         self.present(nextVC, animated: true, completion: nil)
@@ -40,7 +40,7 @@ class ResultVC: UIViewController {
     
     @IBAction func touchUpToGoTabBar(_ sender: Any) {
         let tabBarStoryBoard = UIStoryboard.init(name: "TabBar", bundle: nil)
-        guard let nextVC = tabBarStoryBoard.instantiateViewController(withIdentifier: "TabBarController") as? TabBarController else {return}
+        guard let nextVC = tabBarStoryBoard.instantiateViewController(withIdentifier: TabBarController.className) as? TabBarController else {return}
         
         nextVC.modalPresentationStyle = .fullScreen
         present(nextVC, animated: true, completion: nil)

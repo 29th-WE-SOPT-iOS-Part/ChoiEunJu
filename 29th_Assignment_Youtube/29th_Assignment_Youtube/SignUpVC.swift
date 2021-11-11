@@ -74,7 +74,7 @@ class SignUpVC: UIViewController {
                                       preferredStyle: .alert)
         let okAction = UIAlertAction(title: "확인" ,style: .default) {_ in
             if message == "회원가입 성공" {
-                guard let nextVC = self.storyboard?.instantiateViewController(withIdentifier: "ResultVC") as? ResultVC else {return}
+                guard let nextVC = self.storyboard?.instantiateViewController(withIdentifier: ResultVC.className) as? ResultVC else {return}
                 nextVC.modalPresentationStyle = .fullScreen
                 self.present(nextVC, animated: true, completion: nil)
             }

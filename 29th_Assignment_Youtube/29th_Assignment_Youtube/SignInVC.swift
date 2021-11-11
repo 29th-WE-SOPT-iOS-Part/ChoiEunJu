@@ -43,7 +43,7 @@ class SignInVC: UIViewController {
     }
     
     @IBAction func touchUpToGoSignUpVC(_ sender: Any) {
-        guard let nextVC = self.storyboard?.instantiateViewController(withIdentifier: "SignUpVC") else {return}
+        guard let nextVC = self.storyboard?.instantiateViewController(withIdentifier: SignUpVC.className) else {return}
         
         self.navigationController?.pushViewController(nextVC, animated: true)
     }
@@ -54,7 +54,7 @@ class SignInVC: UIViewController {
                                       preferredStyle: .alert)
         let okAction = UIAlertAction(title: "확인" ,style: .default) {_ in
             if message == "로그인 성공" {
-                guard let nextVC = self.storyboard?.instantiateViewController(withIdentifier: "ResultVC") as? ResultVC else {return}
+                guard let nextVC = self.storyboard?.instantiateViewController(withIdentifier: ResultVC.className) as? ResultVC else {return}
                 nextVC.modalPresentationStyle = .fullScreen
                 self.present(nextVC, animated: true, completion: nil)
             }
@@ -102,6 +102,15 @@ extension SignInVC {
                 print("networkFail")
             }
         }
+    }
+}
+
+extension UIViewController {
+    static var className: String {
+        NSStringFromClass(self.classForCoder()).components(separatedBy: ".").last!
+    }
+     var className: String {
+        NSStringFromClass(self.classForCoder).components(separatedBy: ".").last!
     }
 }
 
