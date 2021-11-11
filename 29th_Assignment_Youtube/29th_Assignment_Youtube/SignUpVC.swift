@@ -64,7 +64,7 @@ class SignUpVC: UIViewController {
         isPasswordVisible = !isPasswordVisible
     }
  
-    @IBAction func touchUpToGoNext(_ sender: Any) {
+    @IBAction func touchUpToGoResultVC(_ sender: Any) {
         requestSignUp()
     }
     

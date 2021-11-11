@@ -100,7 +100,7 @@
                                     <fontDescription key="titleFontDescription" name="SFProDisplay-Medium" family="SF Pro Display" pointSize="14"/>
                                 </buttonConfiguration>
                                 <connections>
-                                    <action selector="touchUpToSendName:" destination="BYZ-38-t0r" eventType="touchUpInside" id="OI9-RR-Do5"/>
+                                    <action selector="touchUpToGoResultVC:" destination="BYZ-38-t0r" eventType="touchUpInside" id="rEj-zQ-Q3L"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -201,7 +201,7 @@
                                     <fontDescription key="titleFontDescription" name="SFProDisplay-Medium" family="SF Pro Display" pointSize="14"/>
                                 </buttonConfiguration>
                                 <connections>
-                                    <action selector="touchUpToGoNext:" destination="IE3-CX-pbj" eventType="touchUpInside" id="gRj-0E-kTR"/>
+                                    <action selector="touchUpToGoResultVC:" destination="IE3-CX-pbj" eventType="touchUpInside" id="9YS-PE-xrx"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Vz-CZ-fD1">

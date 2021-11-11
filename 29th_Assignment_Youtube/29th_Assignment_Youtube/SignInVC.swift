@@ -38,7 +38,7 @@ class SignInVC: UIViewController {
         }
     }
     
-    @IBAction func touchUpToSendName(_ sender: Any) {
+    @IBAction func touchUpToGoResultVC(_ sender: Any) {
         requestLogin()
     }
     
