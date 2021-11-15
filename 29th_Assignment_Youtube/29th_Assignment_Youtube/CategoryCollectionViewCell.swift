@@ -50,12 +50,9 @@ extension CategoryCollectionViewCell {
         categoryLabel.textAlignment = .center
         categoryLabel.textColor = .black
         categoryLabel.font = UIFont(name: "SFProDisplay-Regular", size: 14)
-        categoryLabel.frame = CGRect(x: 0, y: 0, width: 46, height: 32)
         categoryLabel.layer.backgroundColor = UIColor(red: 0.949, green: 0.949, blue: 0.949, alpha: 1).cgColor
         categoryLabel.layer.cornerRadius = 16
         categoryLabel.layer.borderWidth = 1
         categoryLabel.layer.borderColor = UIColor(red: 0.854, green: 0.854, blue: 0.854, alpha: 1).cgColor
-        
-        contentView.addSubview(categoryLabel)
     }
 }
