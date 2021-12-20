@@ -70,7 +70,7 @@ class SignUpVC: UIViewController {
                                       message: message,
                                       preferredStyle: .alert)
         let okAction = UIAlertAction(title: "확인" ,style: .default) {_ in
-            if message == "회원가입 성공" {
+            if message == "\(message)" {
                 guard let nextVC = self.storyboard?.instantiateViewController(withIdentifier: ResultVC.className) as? ResultVC else {return}
                 nextVC.modalPresentationStyle = .fullScreen
                 self.present(nextVC, animated: true, completion: nil)
@@ -104,16 +104,17 @@ extension SignUpVC {
             responseData in
             switch responseData {
             case .success(let signUpResponse):
-                guard let response = signUpResponse as? SignResponseData else {return}
+                guard let response = signUpResponse as? SignResponseData else { return }
                 if response.data != nil {
                     UserDefaults.standard.set(self.nameTextField.text, forKey: "userName")
-                    self.simpleAlert(title: "회원가입", message: "회원가입 성공")
+                    self.simpleAlert(title: "회원가입", message: response.message)
                 }
             case .requestErr(let msg):
                 print("requestERR \(msg)")
-            case .pathErr:
+            case .pathErr(let signUpResponse):
                 print("pathErr")
-                self.simpleAlert(title: "회원가입", message: "이미 사용중인 이메일입니다.")
+                guard let response = signUpResponse as? SignResponseData else { return }
+                self.simpleAlert(title: "회원가입", message: response.message)
             case .serverErr:
                 print("serverErr")
             case .networkFail:

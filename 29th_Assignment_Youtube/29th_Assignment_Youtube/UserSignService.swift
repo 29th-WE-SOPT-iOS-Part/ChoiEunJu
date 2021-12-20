@@ -6,6 +6,7 @@
 //
 
 import Foundation
+
 import Alamofire
 
 struct UserSignService {
@@ -78,7 +79,7 @@ struct UserSignService {
     private func judgeSignStatus(by statusCode: Int, _ data: Data) -> NetworkResult<Any> {
         switch statusCode {
         case 200: return isVaildSignData(data: data)
-        case 400: return .pathErr
+        case 400: return isPathErr(data: data)
         case 500: return .serverErr
         default: return .networkFail
         }
@@ -87,8 +88,16 @@ struct UserSignService {
     private func isVaildSignData(data: Data) -> NetworkResult<Any> {
         let decoder = JSONDecoder()
         guard let decodedData = try? decoder.decode(SignResponseData.self, from: data)
-            else {return .pathErr}
+            else { return .pathErr(data) }
         return .success(decodedData)
+    }
+    
+    private func isPathErr(data: Data) -> NetworkResult<Any> {
+        let decoder = JSONDecoder()
+        guard let decodedData = try? decoder.decode(SignResponseData.self, from: data)
+        else { return .pathErr(data) }
+        return .pathErr(decodedData)
+                
     }
 }
 

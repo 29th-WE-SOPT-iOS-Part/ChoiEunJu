@@ -53,7 +53,7 @@ class SignInVC: UIViewController {
                                       message: message,
                                       preferredStyle: .alert)
         let okAction = UIAlertAction(title: "확인" ,style: .default) {_ in
-            if message == "로그인 성공" {
+            if message == "\(message)" {
                 guard let nextVC = self.storyboard?.instantiateViewController(withIdentifier: ResultVC.className) as? ResultVC else {return}
                 nextVC.modalPresentationStyle = .fullScreen
                 self.present(nextVC, animated: true, completion: nil)
@@ -90,13 +90,14 @@ extension SignInVC {
                 guard let response = loginResponse as? SignResponseData else { return }
                 if response.data != nil {
                     UserDefaults.standard.set(self.nameTextField.text, forKey: "userName")
-                    self.simpleAlert(title: "로그인", message: "로그인 성공")
+                    self.simpleAlert(title: "로그인", message: response.message)
                 }
             case .requestErr(let msg):
                 print("requestERR \(msg)")
-            case .pathErr:
+            case .pathErr(let loginResponse):
                 print("pathErr")
-                self.simpleAlert(title: "로그인", message: "존재하지 않는 회원입니다.")
+                guard let response = loginResponse as? SignResponseData else { return }
+                self.simpleAlert(title: "로그인", message: response.message)
             case .serverErr:
                 print("serverErr")
             case .networkFail:
