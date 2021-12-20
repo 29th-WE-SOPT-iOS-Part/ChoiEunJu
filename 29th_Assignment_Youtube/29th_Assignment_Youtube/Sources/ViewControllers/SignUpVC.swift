@@ -101,7 +101,8 @@ extension SignUpVC: UITextFieldDelegate {
 extension SignUpVC {
     func requestSignUp(){
         UserSignService.shared.signUp(email: idTextField.text ?? "", name: nameTextField.text ?? "", password: passwordTextField.text ?? "") {
-            responseData in switch responseData{
+            responseData in
+            switch responseData {
             case .success(let signUpResponse):
                 guard let response = signUpResponse as? SignResponseData else {return}
                 if response.data != nil {

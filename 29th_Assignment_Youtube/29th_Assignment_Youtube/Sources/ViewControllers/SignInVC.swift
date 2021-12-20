@@ -84,9 +84,10 @@ extension SignInVC: UITextFieldDelegate {
 extension SignInVC {
     func requestLogin(){
         UserSignService.shared.login(email: idTextField.text ?? "", password: passwordTextField.text ?? "") {
-            responseData in switch responseData{
+            responseData in
+            switch responseData {
             case .success(let loginResponse):
-                guard let response = loginResponse as? SignResponseData else {return}
+                guard let response = loginResponse as? SignResponseData else { return }
                 if response.data != nil {
                     UserDefaults.standard.set(self.nameTextField.text, forKey: "userName")
                     self.simpleAlert(title: "로그인", message: "로그인 성공")
