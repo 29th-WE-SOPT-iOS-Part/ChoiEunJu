@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		772C141B273AA7E000BB0127 /* APIConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 772C141A273AA7E000BB0127 /* APIConstants.swift */; };
+		772C141D273AA95000BB0127 /* NetworkResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 772C141C273AA95000BB0127 /* NetworkResult.swift */; };
+		772C141F273AA9C100BB0127 /* SignResponseDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 772C141E273AA9C100BB0127 /* SignResponseDataModel.swift */; };
+		772C1421273AAAD700BB0127 /* UserSignService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 772C1420273AAAD700BB0127 /* UserSignService.swift */; };
 		77AF1B372719E018007401DA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 77AF1B362719E018007401DA /* Assets.xcassets */; };
 		77AF1B392719E79D007401DA /* SF-Pro-Display-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 77AF1B382719E79D007401DA /* SF-Pro-Display-Regular.otf */; };
 		77AF1B3B2719E7DB007401DA /* SF-Pro-Display-Semibold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 77AF1B3A2719E7DB007401DA /* SF-Pro-Display-Semibold.otf */; };
@@ -29,9 +33,15 @@
 		77ECCD59270DFE220090DDF8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 77ECCD57270DFE220090DDF8 /* LaunchScreen.storyboard */; };
 		77ECCD61270E141B0090DDF8 /* SignUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77ECCD60270E141B0090DDF8 /* SignUpVC.swift */; };
 		77ECCD63270E14510090DDF8 /* ResultVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77ECCD62270E14510090DDF8 /* ResultVC.swift */; };
+		E3673B71328668C39D306F84 /* Pods_29th_Assignment_Youtube.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 126E61C2C861EE477EDEF532 /* Pods_29th_Assignment_Youtube.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		126E61C2C861EE477EDEF532 /* Pods_29th_Assignment_Youtube.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_29th_Assignment_Youtube.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		772C141A273AA7E000BB0127 /* APIConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIConstants.swift; sourceTree = "<group>"; };
+		772C141C273AA95000BB0127 /* NetworkResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkResult.swift; sourceTree = "<group>"; };
+		772C141E273AA9C100BB0127 /* SignResponseDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignResponseDataModel.swift; sourceTree = "<group>"; };
+		772C1420273AAAD700BB0127 /* UserSignService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSignService.swift; sourceTree = "<group>"; };
 		77AF1B362719E018007401DA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		77AF1B382719E79D007401DA /* SF-Pro-Display-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "SF-Pro-Display-Regular.otf"; path = "../../../../../../../../../Library/Fonts/SF-Pro-Display-Regular.otf"; sourceTree = "<group>"; };
 		77AF1B3A2719E7DB007401DA /* SF-Pro-Display-Semibold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "SF-Pro-Display-Semibold.otf"; path = "../../../../../../../../../Library/Fonts/SF-Pro-Display-Semibold.otf"; sourceTree = "<group>"; };
@@ -56,6 +66,8 @@
 		77ECCD5A270DFE220090DDF8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		77ECCD60270E141B0090DDF8 /* SignUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpVC.swift; sourceTree = "<group>"; };
 		77ECCD62270E14510090DDF8 /* ResultVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultVC.swift; sourceTree = "<group>"; };
+		813993321E1E762683C977C9 /* Pods-29th_Assignment_Youtube.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-29th_Assignment_Youtube.debug.xcconfig"; path = "Target Support Files/Pods-29th_Assignment_Youtube/Pods-29th_Assignment_Youtube.debug.xcconfig"; sourceTree = "<group>"; };
+		D3741137E771D57A236DFE73 /* Pods-29th_Assignment_Youtube.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-29th_Assignment_Youtube.release.xcconfig"; path = "Target Support Files/Pods-29th_Assignment_Youtube/Pods-29th_Assignment_Youtube.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,17 +75,127 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E3673B71328668C39D306F84 /* Pods_29th_Assignment_Youtube.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		60DCBD5C3EC4585B422697AA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				126E61C2C861EE477EDEF532 /* Pods_29th_Assignment_Youtube.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		7700D1702752482E009CD6E3 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				7700D17927524B0C009CD6E3 /* Supporting Files */,
+				7700D17827524A94009CD6E3 /* Cells */,
+				7700D1772752499E009CD6E3 /* Extensions */,
+				7700D17627524997009CD6E3 /* Models */,
+				7700D1712752484E009CD6E3 /* ViewControllers */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		7700D1712752484E009CD6E3 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				77AF1B3E271B5115007401DA /* NavigationController.swift */,
+				77AF1B42271B5B25007401DA /* TabBarController.swift */,
+				77ECCD50270DFE1F0090DDF8 /* SignInVC.swift */,
+				77ECCD60270E141B0090DDF8 /* SignUpVC.swift */,
+				77ECCD62270E14510090DDF8 /* ResultVC.swift */,
+				77C96F75272A433800A5E44E /* HomeVC.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		7700D1722752486A009CD6E3 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				77ECCD5A270DFE220090DDF8 /* Info.plist */,
+				77AF1B362719E018007401DA /* Assets.xcassets */,
+				7700D173275248A3009CD6E3 /* Views */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		7700D173275248A3009CD6E3 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				7700D175275248ED009CD6E3 /* Storyboard */,
+				7700D174275248E6009CD6E3 /* Nibs */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		7700D174275248E6009CD6E3 /* Nibs */ = {
+			isa = PBXGroup;
+			children = (
+				77C96F78272A6E4700A5E44E /* HomeTableViewCell.xib */,
+				77C96F82272B820100A5E44E /* HomeCollectionViewCell.xib */,
+				77C96F88272C16EA00A5E44E /* CategoryCollectionViewCell.xib */,
+			);
+			path = Nibs;
+			sourceTree = "<group>";
+		};
+		7700D175275248ED009CD6E3 /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				77ECCD57270DFE220090DDF8 /* LaunchScreen.storyboard */,
+				77ECCD52270DFE1F0090DDF8 /* Main.storyboard */,
+				77AF1B40271B57AD007401DA /* TabBar.storyboard */,
+			);
+			path = Storyboard;
+			sourceTree = "<group>";
+		};
+		7700D17627524997009CD6E3 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				772C141E273AA9C100BB0127 /* SignResponseDataModel.swift */,
+				77C96F7B272A7AAF00A5E44E /* AppContentDataModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		7700D1772752499E009CD6E3 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		7700D17827524A94009CD6E3 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				77C96F87272C16EA00A5E44E /* CategoryCollectionViewCell.swift */,
+				77C96F81272B820100A5E44E /* HomeCollectionViewCell.swift */,
+				77C96F77272A6E4700A5E44E /* HomeTableViewCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		7700D17927524B0C009CD6E3 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				77ECCD4C270DFE1F0090DDF8 /* AppDelegate.swift */,
+				77ECCD4E270DFE1F0090DDF8 /* SceneDelegate.swift */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
 		77ECCD40270DFE1F0090DDF8 = {
 			isa = PBXGroup;
 			children = (
 				77ECCD4B270DFE1F0090DDF8 /* 29th_Assignment_Youtube */,
 				77ECCD4A270DFE1F0090DDF8 /* Products */,
+				FFCC8E35E52AA13A2E01FBDC /* Pods */,
+				60DCBD5C3EC4585B422697AA /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -88,31 +210,25 @@
 		77ECCD4B270DFE1F0090DDF8 /* 29th_Assignment_Youtube */ = {
 			isa = PBXGroup;
 			children = (
-				77ECCD5A270DFE220090DDF8 /* Info.plist */,
-				77ECCD52270DFE1F0090DDF8 /* Main.storyboard */,
-				77AF1B40271B57AD007401DA /* TabBar.storyboard */,
-				77C96F78272A6E4700A5E44E /* HomeTableViewCell.xib */,
-				77C96F82272B820100A5E44E /* HomeCollectionViewCell.xib */,
-				77C96F88272C16EA00A5E44E /* CategoryCollectionViewCell.xib */,
-				77ECCD57270DFE220090DDF8 /* LaunchScreen.storyboard */,
-				77ECCD4C270DFE1F0090DDF8 /* AppDelegate.swift */,
-				77ECCD4E270DFE1F0090DDF8 /* SceneDelegate.swift */,
-				77ECCD50270DFE1F0090DDF8 /* SignInVC.swift */,
-				77ECCD60270E141B0090DDF8 /* SignUpVC.swift */,
-				77ECCD62270E14510090DDF8 /* ResultVC.swift */,
-				77C96F75272A433800A5E44E /* HomeVC.swift */,
-				77C96F87272C16EA00A5E44E /* CategoryCollectionViewCell.swift */,
-				77AF1B3E271B5115007401DA /* NavigationController.swift */,
-				77AF1B42271B5B25007401DA /* TabBarController.swift */,
-				77C96F81272B820100A5E44E /* HomeCollectionViewCell.swift */,
-				77C96F77272A6E4700A5E44E /* HomeTableViewCell.swift */,
-				77C96F7B272A7AAF00A5E44E /* AppContentDataModel.swift */,
-				77AF1B362719E018007401DA /* Assets.xcassets */,
+				7700D1702752482E009CD6E3 /* Sources */,
+				772C141A273AA7E000BB0127 /* APIConstants.swift */,
+				772C141C273AA95000BB0127 /* NetworkResult.swift */,
+				772C1420273AAAD700BB0127 /* UserSignService.swift */,
 				77AF1B3A2719E7DB007401DA /* SF-Pro-Display-Semibold.otf */,
 				77AF1B382719E79D007401DA /* SF-Pro-Display-Regular.otf */,
 				77AF1B3C2719EDD4007401DA /* SF-Pro-Display-Medium.otf */,
+				7700D1722752486A009CD6E3 /* Resources */,
 			);
 			path = 29th_Assignment_Youtube;
+			sourceTree = "<group>";
+		};
+		FFCC8E35E52AA13A2E01FBDC /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				813993321E1E762683C977C9 /* Pods-29th_Assignment_Youtube.debug.xcconfig */,
+				D3741137E771D57A236DFE73 /* Pods-29th_Assignment_Youtube.release.xcconfig */,
+			);
+			path = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -122,9 +238,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 77ECCD5D270DFE220090DDF8 /* Build configuration list for PBXNativeTarget "29th_Assignment_Youtube" */;
 			buildPhases = (
+				5973834B49190324A5FDA426 /* [CP] Check Pods Manifest.lock */,
 				77ECCD45270DFE1F0090DDF8 /* Sources */,
 				77ECCD46270DFE1F0090DDF8 /* Frameworks */,
 				77ECCD47270DFE1F0090DDF8 /* Resources */,
+				9FD12CB9D5758E489C4E25BC /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -188,13 +306,58 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		5973834B49190324A5FDA426 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-29th_Assignment_Youtube-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9FD12CB9D5758E489C4E25BC /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-29th_Assignment_Youtube/Pods-29th_Assignment_Youtube-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-29th_Assignment_Youtube/Pods-29th_Assignment_Youtube-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-29th_Assignment_Youtube/Pods-29th_Assignment_Youtube-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		77ECCD45270DFE1F0090DDF8 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				77AF1B3F271B5115007401DA /* NavigationController.swift in Sources */,
+				772C1421273AAAD700BB0127 /* UserSignService.swift in Sources */,
 				77C96F7C272A7AAF00A5E44E /* AppContentDataModel.swift in Sources */,
+				772C141F273AA9C100BB0127 /* SignResponseDataModel.swift in Sources */,
+				772C141B273AA7E000BB0127 /* APIConstants.swift in Sources */,
 				77C96F76272A433800A5E44E /* HomeVC.swift in Sources */,
 				77ECCD63270E14510090DDF8 /* ResultVC.swift in Sources */,
 				77C96F89272C16EA00A5E44E /* CategoryCollectionViewCell.swift in Sources */,
@@ -205,6 +368,7 @@
 				77C96F79272A6E4700A5E44E /* HomeTableViewCell.swift in Sources */,
 				77ECCD61270E141B0090DDF8 /* SignUpVC.swift in Sources */,
 				77ECCD4F270DFE1F0090DDF8 /* SceneDelegate.swift in Sources */,
+				772C141D273AA95000BB0127 /* NetworkResult.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -348,6 +512,7 @@
 		};
 		77ECCD5E270DFE220090DDF8 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 813993321E1E762683C977C9 /* Pods-29th_Assignment_Youtube.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -355,7 +520,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 397WA8BG8W;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = 29th_Assignment_Youtube/Info.plist;
+				INFOPLIST_FILE = 29th_Assignment_Youtube/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -376,6 +541,7 @@
 		};
 		77ECCD5F270DFE220090DDF8 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D3741137E771D57A236DFE73 /* Pods-29th_Assignment_Youtube.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -383,7 +549,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 397WA8BG8W;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = 29th_Assignment_Youtube/Info.plist;
+				INFOPLIST_FILE = 29th_Assignment_Youtube/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
