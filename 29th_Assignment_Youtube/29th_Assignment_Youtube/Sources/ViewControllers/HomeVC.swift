@@ -8,7 +8,7 @@
 import UIKit
 
 class HomeVC: UIViewController {
-
+    
     // MARK: - UI Component Part
     
     @IBOutlet weak var homeTableView: UITableView!
@@ -88,6 +88,7 @@ class HomeVC: UIViewController {
 }
 
 // MARK: - Extension Part
+
 extension HomeVC: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 306
@@ -103,12 +104,20 @@ extension HomeVC: UITableViewDataSource {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: HomeTableViewCell.className) as? HomeTableViewCell else {return UITableViewCell()}
         
         cell.setData(homeData: homeContentList[indexPath.row])
+        cell.videoDelegate = self
         return cell
     }
 }
 
 extension HomeVC: UICollectionViewDelegate {
 
+}
+
+extension HomeVC: videoCellDelegate {
+    func tapThumbnailImage(cell: HomeTableViewCell) {
+        print("tapped")
+    }
+    
 }
 
 extension HomeVC: UICollectionViewDelegateFlowLayout {

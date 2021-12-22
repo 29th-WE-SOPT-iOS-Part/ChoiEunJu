@@ -9,6 +9,8 @@ import UIKit
 
 class HomeTableViewCell: UITableViewCell {
     
+    var videoDelegate: videoCellDelegate?
+    
     // MARK: - UI Component Part
     
     @IBOutlet weak var thumbnailImageView: UIImageView!
@@ -22,6 +24,7 @@ class HomeTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         setUI()
+        setGesture()
     }
 
     // MARK: - Custom Method Part
@@ -30,12 +33,26 @@ class HomeTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
     }
     
+    func setGesture() {
+        let tapRecognizer = UITapGestureRecognizer(target: self, action: #selector(tapVideoImage(gestureRecognizer:)))
+        
+        thumbnailImageView.addGestureRecognizer(tapRecognizer)
+    }
+    
+    @objc func tapVideoImage(gestureRecognizer: UITapGestureRecognizer) {
+        videoDelegate?.tapThumbnailImage(cell: self)
+    }
+    
     func setData(homeData: HomeContentData) {
         thumbnailImageView.image = homeData.makeThumbnailImage()
         profileImageView.image = homeData.makeProfileImage()
         titleLabel.text = homeData.videoTitle
         subTitleLabel.text = homeData.videoSubTitle
     }
+}
+
+protocol videoCellDelegate {
+    func tapThumbnailImage(cell: HomeTableViewCell)
 }
 
 // MARK: - Extension Part
