@@ -116,6 +116,10 @@ extension HomeVC: UICollectionViewDelegate {
 extension HomeVC: videoCellDelegate {
     func tapThumbnailImage(cell: HomeTableViewCell) {
         print("tapped")
+        guard let nextVC = storyboard?.instantiateViewController(withIdentifier: VideoDetailVC.className) as? VideoDetailVC else { return }
+        
+        nextVC.modalPresentationStyle = .fullScreen
+        self.present(nextVC, animated: true, completion: nil)
     }
 }
 
