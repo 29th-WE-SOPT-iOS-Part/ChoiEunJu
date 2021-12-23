@@ -117,7 +117,6 @@ extension HomeVC: videoCellDelegate {
     func tapThumbnailImage(cell: HomeTableViewCell) {
         print("tapped")
     }
-    
 }
 
 extension HomeVC: UICollectionViewDelegateFlowLayout {
