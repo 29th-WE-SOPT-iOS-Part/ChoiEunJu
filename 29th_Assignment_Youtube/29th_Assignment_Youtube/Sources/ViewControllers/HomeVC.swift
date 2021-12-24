@@ -30,6 +30,8 @@ class HomeVC: UIViewController {
         setTableView()
         setCollectionView()
     }
+    
+    // MARK: - IBAction Part
 
     @IBAction func touchUpToGoSignInVC(_ sender: Any) {
         let MainStoryBoard = UIStoryboard.init(name: "Main", bundle: nil)
@@ -105,6 +107,7 @@ extension HomeVC: UITableViewDataSource {
         
         cell.setData(homeData: homeContentList[indexPath.row])
         cell.videoDelegate = self
+        cell.selectionStyle = .none
         return cell
     }
 }
@@ -115,8 +118,11 @@ extension HomeVC: UICollectionViewDelegate {
 
 extension HomeVC: videoCellDelegate {
     func tapThumbnailImage(cell: HomeTableViewCell) {
-        print("tapped")
         guard let nextVC = storyboard?.instantiateViewController(withIdentifier: VideoDetailVC.className) as? VideoDetailVC else { return }
+        
+        nextVC.receivedVideoImage = cell.thumbnailImageView.image
+        nextVC.receivedTitleLabel = cell.titleLabel.text
+        nextVC.receivedSubtitleLabel = cell.subTitleLabel.text
         
         nextVC.modalPresentationStyle = .fullScreen
         self.present(nextVC, animated: true, completion: nil)
