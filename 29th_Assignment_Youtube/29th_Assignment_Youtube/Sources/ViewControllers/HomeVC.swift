@@ -112,10 +112,6 @@ extension HomeVC: UITableViewDataSource {
     }
 }
 
-extension HomeVC: UICollectionViewDelegate {
-
-}
-
 extension HomeVC: videoCellDelegate {
     func tapThumbnailImage(cell: HomeTableViewCell) {
         guard let nextVC = storyboard?.instantiateViewController(withIdentifier: VideoDetailVC.className) as? VideoDetailVC else { return }
