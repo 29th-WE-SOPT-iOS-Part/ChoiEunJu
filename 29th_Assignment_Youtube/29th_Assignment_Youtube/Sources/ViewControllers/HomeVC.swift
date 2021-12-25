@@ -8,7 +8,7 @@
 import UIKit
 
 class HomeVC: UIViewController {
-
+    
     // MARK: - UI Component Part
     
     @IBOutlet weak var homeTableView: UITableView!
@@ -30,6 +30,8 @@ class HomeVC: UIViewController {
         setTableView()
         setCollectionView()
     }
+    
+    // MARK: - IBAction Part
 
     @IBAction func touchUpToGoSignInVC(_ sender: Any) {
         let MainStoryBoard = UIStoryboard.init(name: "Main", bundle: nil)
@@ -88,6 +90,7 @@ class HomeVC: UIViewController {
 }
 
 // MARK: - Extension Part
+
 extension HomeVC: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 306
@@ -103,12 +106,23 @@ extension HomeVC: UITableViewDataSource {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: HomeTableViewCell.className) as? HomeTableViewCell else {return UITableViewCell()}
         
         cell.setData(homeData: homeContentList[indexPath.row])
+        cell.videoDelegate = self
+        cell.selectionStyle = .none
         return cell
     }
 }
 
-extension HomeVC: UICollectionViewDelegate {
-
+extension HomeVC: videoCellDelegate {
+    func tapThumbnailImage(cell: HomeTableViewCell) {
+        guard let nextVC = storyboard?.instantiateViewController(withIdentifier: VideoDetailVC.className) as? VideoDetailVC else { return }
+        
+        nextVC.receivedVideoImage = cell.thumbnailImageView.image
+        nextVC.receivedTitleLabel = cell.titleLabel.text
+        nextVC.receivedSubtitleLabel = cell.subTitleLabel.text
+        
+        nextVC.modalPresentationStyle = .fullScreen
+        self.present(nextVC, animated: true, completion: nil)
+    }
 }
 
 extension HomeVC: UICollectionViewDelegateFlowLayout {

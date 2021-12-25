@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7710CD56277345BC00CE1BC3 /* VideoDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7710CD55277345BC00CE1BC3 /* VideoDetailVC.swift */; };
 		772C141B273AA7E000BB0127 /* APIConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 772C141A273AA7E000BB0127 /* APIConstants.swift */; };
 		772C141D273AA95000BB0127 /* NetworkResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 772C141C273AA95000BB0127 /* NetworkResult.swift */; };
 		772C141F273AA9C100BB0127 /* SignResponseDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 772C141E273AA9C100BB0127 /* SignResponseDataModel.swift */; };
@@ -38,6 +39,7 @@
 
 /* Begin PBXFileReference section */
 		126E61C2C861EE477EDEF532 /* Pods_29th_Assignment_Youtube.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_29th_Assignment_Youtube.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7710CD55277345BC00CE1BC3 /* VideoDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = VideoDetailVC.swift; path = 29th_Assignment_Youtube/Sources/ViewControllers/VideoDetailVC.swift; sourceTree = SOURCE_ROOT; };
 		772C141A273AA7E000BB0127 /* APIConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIConstants.swift; sourceTree = "<group>"; };
 		772C141C273AA95000BB0127 /* NetworkResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkResult.swift; sourceTree = "<group>"; };
 		772C141E273AA9C100BB0127 /* SignResponseDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignResponseDataModel.swift; sourceTree = "<group>"; };
@@ -111,6 +113,7 @@
 				77ECCD60270E141B0090DDF8 /* SignUpVC.swift */,
 				77ECCD62270E14510090DDF8 /* ResultVC.swift */,
 				77C96F75272A433800A5E44E /* HomeVC.swift */,
+				7710CD55277345BC00CE1BC3 /* VideoDetailVC.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -363,6 +366,7 @@
 				77C96F89272C16EA00A5E44E /* CategoryCollectionViewCell.swift in Sources */,
 				77ECCD51270DFE1F0090DDF8 /* SignInVC.swift in Sources */,
 				77ECCD4D270DFE1F0090DDF8 /* AppDelegate.swift in Sources */,
+				7710CD56277345BC00CE1BC3 /* VideoDetailVC.swift in Sources */,
 				77C96F83272B820100A5E44E /* HomeCollectionViewCell.swift in Sources */,
 				77AF1B43271B5B25007401DA /* TabBarController.swift in Sources */,
 				77C96F79272A6E4700A5E44E /* HomeTableViewCell.swift in Sources */,
